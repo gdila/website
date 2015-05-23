@@ -1,0 +1,141 @@
+/*
+Theme Name:     GDI LA
+Description:    Collective child theme for Girl Develop It Los Angeles
+Author:         nataliemac
+Template:       organic_collective
+
+(optional values you can add: Theme URI, Author URI, Version, License, License URI, Tags, Text Domain)
+*/
+/* =========================================== */
+/* General customization */
+/* =========================================== */
+/* line 25, sass/style.scss */
+body,
+#navigation,
+.headline {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* =========================================== */
+/* Content customization */
+/* =========================================== */
+/* line 36, sass/style.scss */
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 1em;
+  text-align: center;
+  text-transform: uppercase; }
+  /* line 41, sass/style.scss */
+  .article h1 + hr, .article h2 + hr, .article h3 + hr, .article h4 + hr, .article h5 + hr, .article h6 + hr {
+    background: transparent;
+    border: 0 none;
+    border-bottom: 2px solid #e49f13;
+    border-top: 2px solid #e49f13;
+    height: 6px;
+    margin: 0 auto 2rem;
+    width: 400px; }
+/* line 51, sass/style.scss */
+.article > p:first-of-type {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+/* line 55, sass/style.scss */
+.article h3 + hr {
+  border-bottom-color: #00A9B4;
+  border-top-color: #00A9B4; }
+/* line 61, sass/style.scss */
+.article h4 + hr {
+  border-bottom-color: #92BB44;
+  border-top-color: #92BB44; }
+
+/* =========================================== */
+/* Header customization */
+/* =========================================== */
+/* line 72, sass/style.scss */
+#header {
+  background: #F05B62; }
+
+/* line 76, sass/style.scss */
+h1#logo,
+h4#logo {
+  margin: 1rem 0 0 1rem; }
+
+/* line 81, sass/style.scss */
+#navigation.navigation-main {
+  margin: 0 1rem 0 0; }
+
+/* line 85, sass/style.scss */
+.menu li {
+  border-left-color: #ec2c35; }
+
+/* line 89, sass/style.scss */
+.menu a:focus,
+.menu a:hover,
+.menu a:active {
+  background: #333333; }
+
+/* line 95, sass/style.scss */
+.menu ul.sub-menu,
+.menu ul.children {
+  background: #333333; }
+
+/* line 100, sass/style.scss */
+.page-headline {
+  background: #00A9B4; }
+
+/* =========================================== */
+/* Footer customization */
+/* =========================================== */
+/* line 108, sass/style.scss */
+.footer-information {
+  background: #00494e; }
+  /* line 110, sass/style.scss */
+  .footer-information .align-left p {
+    font-size: 1rem; }
+
+/* line 116, sass/style.scss */
+#mc_embed_signup div {
+  display: inline; }
+/* line 119, sass/style.scss */
+#mc_embed_signup input[type='email'] {
+  border: 0 none;
+  border-radius: 2px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+  padding: 0.25rem 0.75rem;
+  width: 100%; }
+/* line 130, sass/style.scss */
+#mc_embed_signup input[type='submit'] {
+  background: #cc8f11;
+  border: 0 none;
+  border-radius: 2px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  max-width: 100%;
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  width: 100%; }
+  /* line 143, sass/style.scss */
+  #mc_embed_signup input[type='submit']:focus, #mc_embed_signup input[type='submit']:hover {
+    background: #EDAB23; }
+
+@media only screen and (min-width: 500px) {
+  /* line 151, sass/style.scss */
+  #mc_embed_signup input[type='email'] {
+    margin-bottom: 0;
+    max-width: 50%;
+    width: auto; }
+  /* line 156, sass/style.scss */
+  #mc_embed_signup input[type='submit'] {
+    max-width: 50%;
+    width: auto; } }
+/* line 163, sass/style.scss */
+.social-icons li a {
+  color: white; }

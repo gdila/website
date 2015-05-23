@@ -1,0 +1,165 @@
+/*
+Theme Name:     GDI LA
+Description:    Collective child theme for Girl Develop It Los Angeles
+Author:         nataliemac
+Template:       organic_collective
+
+(optional values you can add: Theme URI, Author URI, Version, License, License URI, Tags, Text Domain)
+*/
+
+@import 'compass';
+
+$color-pink: #F05B62;
+$color-grey: #333333;
+$color-blue: #00A9B4;
+$color-green: #92BB44;
+$color-yellow: #EDAB23;
+$color-maroon: #8B0036;
+
+$font-body: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+/* =========================================== */
+/* General customization */
+/* =========================================== */
+
+body,
+#navigation,
+.headline {
+	font-family: $font-body;
+}
+
+/* =========================================== */
+/* Content customization */
+/* =========================================== */
+
+.article {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $font-body;
+		margin-top: 1em;
+		text-align: center;
+		text-transform: uppercase;
+		& + hr {
+			background: transparent;
+			border: 0 none;
+			border-bottom: 2px solid darken($color-yellow, 5%);
+			border-top: 2px solid darken($color-yellow, 5%);
+			height: 6px;
+			margin: 0 auto 2rem;
+			width: 400px;
+		}
+	}
+	& > p:first-of-type {
+		font-family: $font-body;
+	}
+	h3 {
+		& + hr {
+			border-bottom-color: $color-blue;
+			border-top-color: $color-blue;
+		}
+	}
+	h4 {
+		& + hr {
+			border-bottom-color: $color-green;
+			border-top-color: $color-green;
+		}
+	}
+}
+
+/* =========================================== */
+/* Header customization */
+/* =========================================== */
+
+#header {
+	background: $color-pink;
+}
+
+h1#logo,
+h4#logo {
+	margin: 1rem 0 0 1rem;
+}
+
+#navigation.navigation-main {
+	margin: 0 1rem 0 0;
+}
+
+.menu li {
+	border-left-color: darken($color-pink, 10%);
+}
+
+.menu a:focus,
+.menu a:hover,
+.menu a:active {
+	background: $color-grey;
+}
+
+.menu ul.sub-menu,
+.menu ul.children {
+	background: $color-grey;
+}
+
+.page-headline {
+	background: $color-blue;
+}
+
+/* =========================================== */
+/* Footer customization */
+/* =========================================== */
+
+.footer-information {
+	background: darken($color-blue, 20%);
+	.align-left p {
+		font-size: 1rem;
+	}
+}
+
+#mc_embed_signup {
+	div {
+		display: inline;
+	}
+	input[type='email'] {
+		border: 0 none;
+		border-radius: 2px;
+		@include box-sizing(border-box);
+		font-family: inherit;
+		font-size: inherit;
+		margin-bottom: 0.5rem;
+		max-width: 100%;
+		padding: 0.25rem 0.75rem;
+		width: 100%;
+	}
+	input[type='submit'] {
+		background: darken($color-yellow, 10%);
+		border: 0 none;
+		border-radius: 2px;
+		@include box-sizing(border-box);
+		color: white;
+		cursor: pointer;
+		font-family: inherit;
+		font-size: inherit;
+		max-width: 100%;
+		padding: 0.25rem 1rem;
+		text-transform: uppercase;
+		width: 100%;
+		&:focus, &:hover {
+			background: $color-yellow;
+		}
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	#mc_embed_signup {
+		input[type='email'] {
+			margin-bottom: 0;
+			max-width: 50%;
+			width: auto;
+		}
+		input[type='submit'] {
+			max-width: 50%;
+			width: auto;
+		}
+	}
+}
+
+.social-icons li a {
+	color: white;
+}
