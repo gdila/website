@@ -37,9 +37,9 @@ class NMCustomPost {
                 ),
                 'public' => TRUE,
                 'has_archive' => TRUE,
-                'show_ui'   => FALSE,
-                'show_in_menu' => FALSE,
-                'supports' => array('title', 'editor', 'revisions'),
+                'show_ui'   => TRUE,
+                'show_in_menu' => TRUE,
+                'supports' => array('title', 'editor', 'revisions', 'thumbnail'),
                 'menu_position' => 5,
             );
             register_post_type($post_type, $settings);
