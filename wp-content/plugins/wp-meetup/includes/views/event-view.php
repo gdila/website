@@ -53,17 +53,20 @@ class WPMeetupEventView {
         $output = '';
 
         if ($widget || $simple) {
+            $output .= '<div class="wpm-event-listing">';
             $output .= '<div class="wpm-date-display group' . $event->group_id . '">';
-            $output .= date( 'M',$event->event_time);
-            $output .= '<br />';
-            $output .= date( 'j',$event->event_time);
+            $output .= '<span class="month">' . date( 'M',$event->event_time) . '</span>';
+            $output .= '<span class="day">' . date( 'j',$event->event_time) . '</span>';
             $output .= '</div>';
             $output .= '<div class="widget-meetup-event-list-day">';
-            $output .= '<a href="' . $url . '">';
             $output .= '<div class="wpm-single">';
-            $output .= '<strong>' . $event_raw->group->name . '</strong> - ' . $event_raw->name;
-            $output .= '</div></a></div>';
-            $output .= '<div class="clear"></div>';
+            $output .= '<a href="' . $url . '">';
+            $output .= $event_raw->name;
+            $output .= '</a>';
+            $output .= '<span class="date">' . date( 'F j, Y', $event->event_time ) . ' at ' . date( 'g:i a', $event->event_time ) . '</span>';
+            $output .= '<a class="event-more" href="' . $url . '">' . 'Learn more' . '</a>';
+            $output .= '</div></div>';
+            $output .= '</div>';
         } else {
             $output .= '<div class="wpm-single event-list-item">';
             $output .= '<h2>';

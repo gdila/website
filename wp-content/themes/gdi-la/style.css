@@ -177,3 +177,65 @@ h4#logo {
       /* line 199, sass/style.scss */
       .featured-news .post-category a:hover {
         color: #92BB44; }
+
+/* line 207, sass/style.scss */
+.page-template-template-home .widget {
+  background: transparent;
+  padding: 0; }
+/* line 211, sass/style.scss */
+.page-template-template-home .sidebar h6 {
+  border-bottom: 0 none;
+  font-size: 2.2em;
+  margin: 4px 0;
+  padding: 4px 0; }
+/* line 217, sass/style.scss */
+.page-template-template-home .meetup-widget-event-list {
+  margin: 24px 0; }
+
+/* =========================================== */
+/* Event List Customizations
+/* =========================================== */
+/* line 227, sass/style.scss */
+.sidebar .meetup-widget-event-list .wpm-event-listing {
+  margin-bottom: 36px; }
+  /* line 229, sass/style.scss */
+  .sidebar .meetup-widget-event-list .wpm-event-listing:after {
+    clear: both;
+    content: '';
+    display: table; }
+/* line 235, sass/style.scss */
+.sidebar .meetup-widget-event-list .widget-meetup-event-list-day {
+  font-size: 1.4em;
+  line-height: 1.25;
+  margin: 0;
+  overflow: hidden; }
+  /* line 240, sass/style.scss */
+  .sidebar .meetup-widget-event-list .widget-meetup-event-list-day .wpm-single {
+    float: none;
+    margin: 0;
+    width: auto; }
+    /* line 244, sass/style.scss */
+    .sidebar .meetup-widget-event-list .widget-meetup-event-list-day .wpm-single .date {
+      display: block;
+      font-size: 0.6em; }
+    /* line 248, sass/style.scss */
+    .sidebar .meetup-widget-event-list .widget-meetup-event-list-day .wpm-single .event-more {
+      display: block;
+      font-size: 0.6em; }
+/* line 254, sass/style.scss */
+.sidebar .meetup-widget-event-list .wpm-date-display {
+  background: white;
+  border: 2px solid #00A9B4;
+  color: #333333;
+  margin: 0 1em 0 0;
+  padding: 0; }
+  /* line 260, sass/style.scss */
+  .sidebar .meetup-widget-event-list .wpm-date-display .month {
+    background: #00A9B4;
+    color: white;
+    display: block;
+    font-size: 0.9em; }
+  /* line 266, sass/style.scss */
+  .sidebar .meetup-widget-event-list .wpm-date-display .day {
+    display: block;
+    font-size: 1.2em; }
