@@ -297,3 +297,113 @@ h4#logo {
 		}
 	}
 }
+
+/* =========================================== */
+/* Blog List Customizations
+/* =========================================== */
+
+.blog-holder {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.blog-listing {
+	&.holder {
+		border-bottom: 1px solid lighten($color-grey, 75%);
+		margin-bottom: 36px;
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+	}
+	.feature-img {
+		margin-top: 0;
+		padding-bottom: 36px;
+	}
+	.post-category {
+		font-size: 1.6em;
+		line-height: 1.125;
+		a {
+			color: $color-blue;
+			text-decoration: none;
+			&:hover {
+				color: $color-green;
+			}
+		}
+	}
+	.headline {
+		line-height: 1.125;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	.padding {
+		padding: 0 36px 36px 36px;
+	}
+}
+
+/* =========================================== */
+/* Blog Post Customizations
+/* =========================================== */
+
+.post.type-post {
+	.wp-post-image {
+		display: block;
+		margin: 0 auto;
+	}
+	.post-category {
+		font-size: 1.6em;
+		line-height: 1.125;
+		margin-top: 36px;
+		text-align: center;
+		a {
+			color: $color-blue;
+			text-decoration: none;
+			&:hover {
+				color: $color-green;
+			}
+		}
+	}
+	.headline {
+		line-height: 1.25;
+		margin-bottom: 0;
+		padding-bottom: 0;
+		text-align: center;
+	}
+	.post-author {
+		text-align: center;
+	}
+}
+
+.pull-quote {
+	font-size: 1.8em;
+	width: 33%;
+	p {
+		color: $color-pink;
+		line-height: 1.5;
+	}
+	cite {
+		color: $color-blue;
+		display: block;
+		text-align: right;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.pull-quote {
+		&.alignright,
+		&.alignleft {
+			width: 40%;
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.pull-quote {
+		&.alignright,
+		&.alignleft {
+			width: 100%;
+		}
+	}
+}
+

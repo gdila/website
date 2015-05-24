@@ -261,3 +261,97 @@ h4#logo {
   /* line 294, sass/style.scss */
   .featured-team .information .excerpt a {
     color: #00494e; }
+
+/* =========================================== */
+/* Blog List Customizations
+/* =========================================== */
+/* line 305, sass/style.scss */
+.blog-holder {
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
+/* line 311, sass/style.scss */
+.blog-listing.holder {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 36px; }
+  /* line 314, sass/style.scss */
+  .blog-listing.holder:after {
+    clear: both;
+    content: '';
+    display: table; }
+/* line 320, sass/style.scss */
+.blog-listing .feature-img {
+  margin-top: 0;
+  padding-bottom: 36px; }
+/* line 324, sass/style.scss */
+.blog-listing .post-category {
+  font-size: 1.6em;
+  line-height: 1.125; }
+  /* line 327, sass/style.scss */
+  .blog-listing .post-category a {
+    color: #00A9B4;
+    text-decoration: none; }
+    /* line 330, sass/style.scss */
+    .blog-listing .post-category a:hover {
+      color: #92BB44; }
+/* line 335, sass/style.scss */
+.blog-listing .headline {
+  line-height: 1.125;
+  margin-bottom: 0;
+  padding-bottom: 0; }
+/* line 340, sass/style.scss */
+.blog-listing .padding {
+  padding: 0 36px 36px 36px; }
+
+/* =========================================== */
+/* Blog Post Customizations
+/* =========================================== */
+/* line 350, sass/style.scss */
+.post.type-post .wp-post-image {
+  display: block;
+  margin: 0 auto; }
+/* line 354, sass/style.scss */
+.post.type-post .post-category {
+  font-size: 1.6em;
+  line-height: 1.125;
+  margin-top: 36px;
+  text-align: center; }
+  /* line 359, sass/style.scss */
+  .post.type-post .post-category a {
+    color: #00A9B4;
+    text-decoration: none; }
+    /* line 362, sass/style.scss */
+    .post.type-post .post-category a:hover {
+      color: #92BB44; }
+/* line 367, sass/style.scss */
+.post.type-post .headline {
+  line-height: 1.25;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: center; }
+/* line 373, sass/style.scss */
+.post.type-post .post-author {
+  text-align: center; }
+
+/* line 378, sass/style.scss */
+.pull-quote {
+  font-size: 1.8em;
+  width: 33%; }
+  /* line 381, sass/style.scss */
+  .pull-quote p {
+    color: #F05B62;
+    line-height: 1.5; }
+  /* line 385, sass/style.scss */
+  .pull-quote cite {
+    color: #00A9B4;
+    display: block;
+    text-align: right; }
+
+@media only screen and (max-width: 1024px) {
+  /* line 394, sass/style.scss */
+  .pull-quote.alignright, .pull-quote.alignleft {
+    width: 40%; } }
+@media only screen and (max-width: 767px) {
+  /* line 403, sass/style.scss */
+  .pull-quote.alignright, .pull-quote.alignleft {
+    width: 100%; } }

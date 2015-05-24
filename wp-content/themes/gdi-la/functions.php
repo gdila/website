@@ -84,3 +84,15 @@ function custom_excerpt($text) {  // custom 'read more' link
    return $excerpt;
 }
 add_filter('the_excerpt', 'custom_excerpt');
+
+
+/* Pull Quote */
+function pullquote_shortcode( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'align' => 'right',
+		'cite' => ''
+	), $atts );
+
+	return '<blockquote class="pull-quote align' . esc_attr($a['align']) . '"><p>' . $content . '</p><cite>~ ' . esc_attr($a['cite']) . '</cite></blockquote>';
+}
+add_shortcode( 'pullquote', 'pullquote_shortcode' );
