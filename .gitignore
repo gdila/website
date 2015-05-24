@@ -13,10 +13,3 @@ wp-content/plugins/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
-
-
-wp-content/plugins/force-regenerate-thumbnails/force-regenerate-thumbnails.php
-
-wp-content/plugins/force-regenerate-thumbnails/jquery-ui/jquery.ui.progressbar.min.1.7.2.js
-
-wp-content/plugins/force-regenerate-thumbnails/jquery-ui/redmond/jquery-ui-1.7.2.custom.css
