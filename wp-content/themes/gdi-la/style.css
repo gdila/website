@@ -139,3 +139,41 @@ h4#logo {
 /* line 163, sass/style.scss */
 .social-icons li a {
   color: white; }
+
+/* =========================================== */
+/* Home Page customization */
+/* =========================================== */
+/* line 171, sass/style.scss */
+.news-section {
+  background: transparent; }
+
+/* line 175, sass/style.scss */
+.featured-news {
+  padding-bottom: 0;
+  padding-top: 0; }
+  /* line 178, sass/style.scss */
+  .featured-news .feature-img img {
+    margin-left: 0; }
+  /* line 181, sass/style.scss */
+  .featured-news .holder {
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 36px; }
+  /* line 185, sass/style.scss */
+  .featured-news .padding {
+    padding-top: 0; }
+  /* line 188, sass/style.scss */
+  .featured-news .headline {
+    line-height: 1.125;
+    margin-bottom: 0;
+    padding-bottom: 0; }
+  /* line 193, sass/style.scss */
+  .featured-news .post-category {
+    font-size: 1.6em;
+    line-height: 1.125; }
+    /* line 196, sass/style.scss */
+    .featured-news .post-category a {
+      color: #00A9B4;
+      text-decoration: none; }
+      /* line 199, sass/style.scss */
+      .featured-news .post-category a:hover {
+        color: #92BB44; }
