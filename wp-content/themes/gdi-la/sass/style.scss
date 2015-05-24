@@ -28,6 +28,20 @@ body,
 	font-family: $font-body;
 }
 
+.content {
+	max-width: 960px;
+}
+
+.postarea,
+.article {
+	overflow: visible;
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
 /* =========================================== */
 /* Content customization */
 /* =========================================== */
@@ -276,24 +290,26 @@ h4#logo {
 	}
 	.information {
 		.title {
-			background: lighten($color-grey, 40%);
-			// background: $color-pink;
-			// background: lighten($color-pink, 27%);
-			font-size: 1.2em;
+			background: lighten($color-grey, 66%);
+			border-top: 5px solid lighten($color-grey, 50%);
 			margin-top: 0;
 			a {
-				color: white;
+				color: $color-grey;
 			}
 		}
 		.subtitle {
-			color: lighten($color-grey, 70%);
+			color: lighten($color-grey, 30%);
+			font-family: 'Lora', Georgia, "Times New Roman", Times, serif;
 		}
 		.excerpt {
-			background: lighten($color-grey, 50%);
-			color: white;
+			background: lighten($color-grey, 70%);
+			color: lighten($color-grey, 20%);
 			a {
 				color: darken($color-blue, 20%);
 			}
+		}
+		.border-line {
+			background-color: $color-pink;
 		}
 	}
 }
@@ -346,7 +362,7 @@ h4#logo {
 /* Blog Post Customizations
 /* =========================================== */
 
-.post.type-post {
+.single-post {
 	.wp-post-image {
 		display: block;
 		margin: 0 auto;

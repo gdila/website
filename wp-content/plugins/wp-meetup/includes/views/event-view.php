@@ -72,7 +72,7 @@ class WPMeetupEventView {
 			$output .= '</div>';
 		} else {
 			/* Container <div>s */
-			$output .= '<div class="four columns">';
+			$output .= '<div class="third columns">';
 			$output .= '<div class="holder">';
 			/* Featured image and link */
 			$output .= '<a href="' . $url . '" target="' . $target . '">';
@@ -86,10 +86,10 @@ class WPMeetupEventView {
 			$output .= '</a>';
 			$output .= '</h2>';
 			$output .= '<div class="excerpt">';
-			$output .= '<p class="subtitle">' . date( 'F j, Y',$event->event_time) . ' at ' .date( 'g:i a',$event->event_time) . '</p>';
+			$output .= '<p class="subtitle text-center">' . date( 'F j, Y',$event->event_time) . ' at ' .date( 'g:i a',$event->event_time) . '</p>';
 			$output .= '<span class="border-line"></span>';
 			$output .= '<p>';
-			$end = 250;
+			$end = 225;
 			if (strlen($event_raw->description) < $end) {$end = strlen($event_raw->description);}
 			$output .= substr($event_raw->description, 0, $end) . '... ';
 			// $output .= $event->post_excerpt;

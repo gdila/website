@@ -5,8 +5,7 @@ function gdila_enqueue_styles() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'child-style',
 		get_stylesheet_directory_uri() . '/style.css', array('parent-style') );
-	wp_dequeue_script( 'collective-equal-heights' );
-
+	wp_enqueue_script( 'gdila-custom', get_stylesheet_directory_uri() . '/js/gdila.custom.js', array( 'collective-custom' ) );
 }
 add_action( 'wp_enqueue_scripts', 'gdila_enqueue_styles' );
 
