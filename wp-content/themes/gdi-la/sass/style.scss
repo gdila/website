@@ -269,3 +269,31 @@ h4#logo {
 		}
 	}
 }
+
+.featured-team {
+	.event-thumb {
+		display: block;
+	}
+	.information {
+		.title {
+			background: lighten($color-grey, 40%);
+			// background: $color-pink;
+			// background: lighten($color-pink, 27%);
+			font-size: 1.2em;
+			margin-top: 0;
+			a {
+				color: white;
+			}
+		}
+		.subtitle {
+			color: lighten($color-grey, 70%);
+		}
+		.excerpt {
+			background: lighten($color-grey, 50%);
+			color: white;
+			a {
+				color: darken($color-blue, 20%);
+			}
+		}
+	}
+}

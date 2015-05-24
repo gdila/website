@@ -239,3 +239,25 @@ h4#logo {
   .sidebar .meetup-widget-event-list .wpm-date-display .day {
     display: block;
     font-size: 1.2em; }
+
+/* line 274, sass/style.scss */
+.featured-team .event-thumb {
+  display: block; }
+/* line 278, sass/style.scss */
+.featured-team .information .title {
+  background: #999999;
+  font-size: 1.2em;
+  margin-top: 0; }
+  /* line 284, sass/style.scss */
+  .featured-team .information .title a {
+    color: white; }
+/* line 288, sass/style.scss */
+.featured-team .information .subtitle {
+  color: #e6e6e6; }
+/* line 291, sass/style.scss */
+.featured-team .information .excerpt {
+  background: #b3b3b3;
+  color: white; }
+  /* line 294, sass/style.scss */
+  .featured-team .information .excerpt a {
+    color: #00494e; }

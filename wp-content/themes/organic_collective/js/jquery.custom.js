@@ -32,7 +32,7 @@
 				animationLoop		: true,
 				smoothHeight		: true,
 				controlNav			: false,
-				
+
 				start: function(slider) {
 					slider.removeClass('loading');
 					$( ".preloader" ).hide();
@@ -40,14 +40,14 @@
 			});
 		}
 	}
-		
+
 	/* Portfolio Filter ---------------------*/
 	function isotopeSetup() {
 		var mycontainer = $('#portfolio-list');
 		mycontainer.isotope({
 			itemSelector: '.portfolio-item'
 		});
-	
+
 		// filter items when filter link is clicked
 		$('#portfolio-filter a').click(function(){
 			var selector = $(this).attr('data-filter');
@@ -55,7 +55,7 @@
 			return false;
 		});
 	}
-	
+
 	/* Masonry ---------------------*/
 	function masonrySetup() {
 		$('.members').masonry({
@@ -68,12 +68,12 @@
 		   $('.members').masonry('reload');
 		});
 	}
-	
+
 	/* Size Featured Image To Content ---------------------*/
 	function sizingSetup() {
 		$(".featured-news .feature-img").css({'height':($(".featured-news .information").height()+'px')});
 	}
-	
+
 	/* Fit Text For Huge Headlines ---------------------*/
 	function textSetup() {
 		$(".headline.img-headline").fitText(1.4, { minFontSize: '48px', maxFontSize: '112px' });
@@ -81,7 +81,7 @@
 		$(".headline.member-headline").fitText(1.1, { minFontSize: '48px', maxFontSize: '96px' });
 		$(".headline.post-headline").fitText(1.1, { minFontSize: '36px', maxFontSize: '96px' });
 	}
-	
+
 	/* Parallax ---------------------*/
 	function parallaxSetup() {
 		var $window = $(window);
@@ -96,26 +96,26 @@
 			});
 		});
 	}
-		
+
 	function modifyPosts() {
-	
+
 		/* Insert Line Break Before More Links ---------------------*/
 		$('<br />').insertBefore('.more-link');
-		
+
 		/* Hide Comments When No Comments Activated ---------------------*/
 		$('.nocomments').parent().css('display', 'none');
-		
+
 		/* Animate Page Scroll ---------------------*/
 		$(".scroll").click(function(event){
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 		});
-		
+
 		/* Fit Vids ---------------------*/
 		$('.feature-vid, .content').fitVids();
 
 	}
-	
+
 	$( document )
 	.ready( removeNoJsClass )
 	.ready( superfishSetup )
@@ -124,7 +124,7 @@
 	.ready( masonrySetup )
 	.ready( parallaxSetup )
 	.on( 'post-load', modifyPosts );
-	
+
 	$( window )
 	.load( flexSliderSetup )
 	.load( isotopeSetup )
@@ -134,5 +134,5 @@
 	.resize( sizingSetup )
 	.resize( masonrySetup )
 	.resize( isotopeSetup );
-	
+
 })( jQuery );
