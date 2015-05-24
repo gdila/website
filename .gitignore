@@ -8,6 +8,13 @@ wp-content/backup-db/
 wp-content/backups/
 wp-content/blogs.dir/
 wp-content/cache/
+wp-content/plugins/akismet/
+wp-content/plugins/favicon-by-realfavicongenerator/
+wp-content/plugins/flexible-posts-widget/
+wp-content/plugins/force-regenerate-thumbnails/
+wp-content/plugins/gravityforms/
+wp-content/plugins/gravityrformsmailchimp/
+wp-content/plugins/wp-migrate-db-pro/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php

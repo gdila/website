@@ -9,12 +9,12 @@
 
 <?php if ( has_post_thumbnail() ) { ?>
 
-	<!-- BEGIN .four columns -->
+	<!-- BEGIN .five columns -->
 	<div class="five columns">
 
 		<a class="feature-img" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'organicthemes' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail( 'collective-featured-small' ); ?></a>
 
-	<!-- END .fiv columns -->
+	<!-- END .five columns -->
 	</div>
 
 	<!-- BEGIN .eleven columns -->
