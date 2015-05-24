@@ -202,3 +202,70 @@ h4#logo {
 		}
 	}
 }
+
+.page-template-template-home {
+	.widget {
+		background: transparent;
+		padding: 0;
+	}
+	.sidebar h6 {
+		border-bottom: 0 none;
+		font-size: 2.2em;
+		margin: 4px 0;
+		padding: 4px 0;
+	}
+	.meetup-widget-event-list {
+		margin: 24px 0;
+	}
+}
+
+/* =========================================== */
+/* Event List Customizations
+/* =========================================== */
+
+.sidebar .meetup-widget-event-list {
+	.wpm-event-listing {
+		margin-bottom: 36px;
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+	}
+	.widget-meetup-event-list-day {
+		font-size: 1.4em;
+		line-height: 1.25;
+		margin: 0;
+		overflow: hidden;
+		.wpm-single {
+			float: none;
+			margin: 0;
+			width: auto;
+			.date {
+				display: block;
+				font-size: 0.6em;
+			}
+			.event-more {
+				display: block;
+				font-size: 0.6em;
+			}
+		}
+	}
+	.wpm-date-display {
+		background: white;
+		border: 2px solid $color-blue;
+		color: $color-grey;
+		margin: 0 1em 0 0;
+		padding: 0;
+		.month {
+			background: $color-blue;
+			color: white;
+			display: block;
+			font-size: 0.9em;
+		}
+		.day {
+			display: block;
+			font-size: 1.2em;
+		}
+	}
+}
