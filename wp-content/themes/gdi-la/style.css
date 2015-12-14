@@ -22,24 +22,30 @@ body,
 /* line 35, sass/style.scss */
 .postarea,
 .article {
+  margin-bottom: 2.25em;
   overflow: visible; }
-  /* line 38, sass/style.scss */
+  /* line 39, sass/style.scss */
   .postarea:after,
   .article:after {
     clear: both;
     content: '';
     display: table; }
 
+/* line 46, sass/style.scss */
+p {
+  margin: 0 0 1em 0;
+  padding: 0; }
+
 /* =========================================== */
 /* Content customization */
 /* =========================================== */
-/* line 50, sass/style.scss */
+/* line 56, sass/style.scss */
 .article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 1em;
   text-align: center;
   text-transform: uppercase; }
-  /* line 55, sass/style.scss */
+  /* line 61, sass/style.scss */
   .article h1 + hr, .article h2 + hr, .article h3 + hr, .article h4 + hr, .article h5 + hr, .article h6 + hr {
     background: transparent;
     border: 0 none;
@@ -48,14 +54,14 @@ body,
     height: 6px;
     margin: 0 auto 2rem;
     width: 400px; }
-/* line 65, sass/style.scss */
+/* line 71, sass/style.scss */
 .article > p:first-of-type {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* line 69, sass/style.scss */
+/* line 75, sass/style.scss */
 .article h3 + hr {
   border-bottom-color: #00A9B4;
   border-top-color: #00A9B4; }
-/* line 75, sass/style.scss */
+/* line 81, sass/style.scss */
 .article h4 + hr {
   border-bottom-color: #92BB44;
   border-top-color: #92BB44; }
@@ -63,52 +69,52 @@ body,
 /* =========================================== */
 /* Header customization */
 /* =========================================== */
-/* line 86, sass/style.scss */
+/* line 92, sass/style.scss */
 #header {
   background: #F05B62; }
 
-/* line 90, sass/style.scss */
+/* line 96, sass/style.scss */
 h1#logo,
 h4#logo {
   margin: 1rem 0 0 1rem; }
 
-/* line 95, sass/style.scss */
+/* line 101, sass/style.scss */
 #navigation.navigation-main {
   margin: 0 1rem 0 0; }
 
-/* line 99, sass/style.scss */
+/* line 105, sass/style.scss */
 .menu li {
   border-left-color: #ec2c35; }
 
-/* line 103, sass/style.scss */
+/* line 109, sass/style.scss */
 .menu a:focus,
 .menu a:hover,
 .menu a:active {
   background: #333333; }
 
-/* line 109, sass/style.scss */
+/* line 115, sass/style.scss */
 .menu ul.sub-menu,
 .menu ul.children {
   background: #333333; }
 
-/* line 114, sass/style.scss */
+/* line 120, sass/style.scss */
 .page-headline {
   background: #00A9B4; }
 
 /* =========================================== */
 /* Footer customization */
 /* =========================================== */
-/* line 122, sass/style.scss */
+/* line 128, sass/style.scss */
 .footer-information {
   background: #00494e; }
-  /* line 124, sass/style.scss */
+  /* line 130, sass/style.scss */
   .footer-information .align-left p {
     font-size: 1rem; }
 
-/* line 130, sass/style.scss */
+/* line 136, sass/style.scss */
 #mc_embed_signup div {
   display: inline; }
-/* line 133, sass/style.scss */
+/* line 139, sass/style.scss */
 #mc_embed_signup input[type='email'] {
   border: 0 none;
   border-radius: 2px;
@@ -121,7 +127,7 @@ h4#logo {
   max-width: 100%;
   padding: 0.25rem 0.75rem;
   width: 100%; }
-/* line 144, sass/style.scss */
+/* line 150, sass/style.scss */
 #mc_embed_signup input[type='submit'] {
   background: #cc8f11;
   border: 0 none;
@@ -137,250 +143,275 @@ h4#logo {
   padding: 0.25rem 1rem;
   text-transform: uppercase;
   width: 100%; }
-  /* line 157, sass/style.scss */
+  /* line 163, sass/style.scss */
   #mc_embed_signup input[type='submit']:focus, #mc_embed_signup input[type='submit']:hover {
     background: #EDAB23; }
 
 @media only screen and (min-width: 500px) {
-  /* line 165, sass/style.scss */
+  /* line 171, sass/style.scss */
   #mc_embed_signup input[type='email'] {
     margin-bottom: 0;
     max-width: 50%;
     width: auto; }
-  /* line 170, sass/style.scss */
+  /* line 176, sass/style.scss */
   #mc_embed_signup input[type='submit'] {
     max-width: 50%;
     width: auto; } }
-/* line 177, sass/style.scss */
+/* line 183, sass/style.scss */
 .social-icons li a {
   color: white; }
 
 /* =========================================== */
 /* Home Page customization */
 /* =========================================== */
-/* line 185, sass/style.scss */
+/* line 191, sass/style.scss */
 .news-section {
   background: transparent; }
 
-/* line 189, sass/style.scss */
+/* line 195, sass/style.scss */
 .featured-news {
   padding-bottom: 0;
   padding-top: 0; }
-  /* line 192, sass/style.scss */
+  /* line 198, sass/style.scss */
   .featured-news .feature-img img {
     margin-left: 0; }
-  /* line 195, sass/style.scss */
+  /* line 201, sass/style.scss */
   .featured-news .holder {
     border-bottom: 1px solid #f2f2f2;
     margin-bottom: 36px; }
-  /* line 199, sass/style.scss */
+  /* line 205, sass/style.scss */
   .featured-news .padding {
     padding-top: 0; }
-  /* line 202, sass/style.scss */
+  /* line 208, sass/style.scss */
   .featured-news .headline {
     line-height: 1.125;
     margin-bottom: 0;
     padding-bottom: 0; }
-  /* line 207, sass/style.scss */
+  /* line 213, sass/style.scss */
   .featured-news .post-category {
     font-size: 1.6em;
     line-height: 1.125; }
-    /* line 210, sass/style.scss */
+    /* line 216, sass/style.scss */
     .featured-news .post-category a {
       color: #00A9B4;
       text-decoration: none; }
-      /* line 213, sass/style.scss */
+      /* line 219, sass/style.scss */
       .featured-news .post-category a:hover {
         color: #92BB44; }
 
-/* line 221, sass/style.scss */
+/* line 227, sass/style.scss */
 .page-template-template-home .widget {
   background: transparent;
   padding: 0; }
-/* line 225, sass/style.scss */
+/* line 231, sass/style.scss */
 .page-template-template-home .sidebar h6 {
   border-bottom: 0 none;
   font-size: 2.2em;
   margin: 4px 0;
   padding: 4px 0; }
-/* line 231, sass/style.scss */
+/* line 237, sass/style.scss */
 .page-template-template-home .meetup-widget-event-list {
   margin: 24px 0; }
 
 /* =========================================== */
 /* Event List Customizations
 /* =========================================== */
-/* line 241, sass/style.scss */
+/* line 247, sass/style.scss */
 .sidebar .meetup-widget-event-list .wpm-event-listing {
   margin-bottom: 36px; }
-  /* line 243, sass/style.scss */
+  /* line 249, sass/style.scss */
   .sidebar .meetup-widget-event-list .wpm-event-listing:after {
     clear: both;
     content: '';
     display: table; }
-/* line 249, sass/style.scss */
+/* line 255, sass/style.scss */
 .sidebar .meetup-widget-event-list .widget-meetup-event-list-day {
   font-size: 1.4em;
   line-height: 1.25;
   margin: 0;
   overflow: hidden; }
-  /* line 254, sass/style.scss */
+  /* line 260, sass/style.scss */
   .sidebar .meetup-widget-event-list .widget-meetup-event-list-day .wpm-single {
     float: none;
     margin: 0;
     width: auto; }
-    /* line 258, sass/style.scss */
+    /* line 264, sass/style.scss */
     .sidebar .meetup-widget-event-list .widget-meetup-event-list-day .wpm-single .date {
       display: block;
       font-size: 0.6em; }
-    /* line 262, sass/style.scss */
+    /* line 268, sass/style.scss */
     .sidebar .meetup-widget-event-list .widget-meetup-event-list-day .wpm-single .event-more {
       display: block;
       font-size: 0.6em; }
-/* line 268, sass/style.scss */
+/* line 274, sass/style.scss */
 .sidebar .meetup-widget-event-list .wpm-date-display {
   background: white;
   border: 2px solid #00A9B4;
   color: #333333;
   margin: 0 1em 0 0;
   padding: 0; }
-  /* line 274, sass/style.scss */
+  /* line 280, sass/style.scss */
   .sidebar .meetup-widget-event-list .wpm-date-display .month {
     background: #00A9B4;
     color: white;
     display: block;
     font-size: 0.9em; }
-  /* line 280, sass/style.scss */
+  /* line 286, sass/style.scss */
   .sidebar .meetup-widget-event-list .wpm-date-display .day {
     display: block;
     font-size: 1.2em; }
 
-/* line 288, sass/style.scss */
+/* line 294, sass/style.scss */
 .featured-team .event-thumb {
   display: block; }
-/* line 292, sass/style.scss */
+/* line 298, sass/style.scss */
 .featured-team .information .title {
   background: #dbdbdb;
   border-top: 5px solid #b3b3b3;
   margin-top: 0; }
-  /* line 296, sass/style.scss */
+  /* line 302, sass/style.scss */
   .featured-team .information .title a {
     color: #333333; }
-/* line 300, sass/style.scss */
+/* line 306, sass/style.scss */
 .featured-team .information .subtitle {
   color: gray;
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; }
-/* line 304, sass/style.scss */
+/* line 310, sass/style.scss */
 .featured-team .information .excerpt {
   background: #e6e6e6;
   color: #666666; }
-  /* line 307, sass/style.scss */
+  /* line 313, sass/style.scss */
   .featured-team .information .excerpt a {
     color: #00494e; }
-/* line 311, sass/style.scss */
+/* line 317, sass/style.scss */
 .featured-team .information .border-line {
   background-color: #F05B62; }
 
 /* =========================================== */
 /* Blog List Customizations
 /* =========================================== */
-/* line 321, sass/style.scss */
+/* line 327, sass/style.scss */
 .blog-holder {
   margin-bottom: 0;
   padding-bottom: 0; }
 
-/* line 327, sass/style.scss */
+/* line 333, sass/style.scss */
 .blog-listing.holder {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 36px; }
-  /* line 330, sass/style.scss */
+  /* line 336, sass/style.scss */
   .blog-listing.holder:after {
     clear: both;
     content: '';
     display: table; }
-/* line 336, sass/style.scss */
+/* line 342, sass/style.scss */
 .blog-listing .feature-img {
   margin-top: 0;
   padding-bottom: 36px; }
-/* line 340, sass/style.scss */
+/* line 346, sass/style.scss */
 .blog-listing .post-category {
   font-size: 1.6em;
   line-height: 1.125; }
-  /* line 343, sass/style.scss */
+  /* line 349, sass/style.scss */
   .blog-listing .post-category a {
     color: #00A9B4;
     text-decoration: none; }
-    /* line 346, sass/style.scss */
+    /* line 352, sass/style.scss */
     .blog-listing .post-category a:hover {
       color: #92BB44; }
-/* line 351, sass/style.scss */
+/* line 357, sass/style.scss */
 .blog-listing .headline {
   line-height: 1.125;
   margin-bottom: 0;
   padding-bottom: 0; }
-/* line 356, sass/style.scss */
+/* line 362, sass/style.scss */
 .blog-listing .padding {
   padding: 0 36px 36px 36px; }
 
 /* =========================================== */
 /* Blog Post Customizations
 /* =========================================== */
-/* line 366, sass/style.scss */
+/* line 372, sass/style.scss */
 .single-post .wp-post-image {
   display: block;
   margin: 0 auto; }
-/* line 370, sass/style.scss */
+/* line 376, sass/style.scss */
 .single-post .post-category {
   font-size: 1.6em;
   line-height: 1.125;
   margin-top: 36px;
   text-align: center; }
-  /* line 375, sass/style.scss */
+  /* line 381, sass/style.scss */
   .single-post .post-category a {
     color: #00A9B4;
     text-decoration: none; }
-    /* line 378, sass/style.scss */
+    /* line 384, sass/style.scss */
     .single-post .post-category a:hover {
       color: #92BB44; }
-/* line 383, sass/style.scss */
+/* line 389, sass/style.scss */
 .single-post .headline {
   line-height: 1.25;
   margin-bottom: 0;
   padding-bottom: 0;
   text-align: center; }
-/* line 389, sass/style.scss */
+/* line 395, sass/style.scss */
 .single-post .post-author {
   text-align: center; }
 
-/* line 394, sass/style.scss */
+/* line 400, sass/style.scss */
 .pull-quote {
   font-size: 1.8em;
   width: 33%; }
-  /* line 397, sass/style.scss */
+  /* line 403, sass/style.scss */
   .pull-quote p {
     color: #F05B62;
     line-height: 1.5; }
-  /* line 401, sass/style.scss */
+  /* line 407, sass/style.scss */
   .pull-quote cite {
     color: #00A9B4;
     display: block;
     text-align: right; }
 
-/* line 408, sass/style.scss */
+/* line 414, sass/style.scss */
 dl {
   margin: 1em auto;
   max-width: 960px; }
-  /* line 411, sass/style.scss */
+  /* line 417, sass/style.scss */
   dl dt {
     font-size: 1.4em;
     font-weight: bold;
     margin: 1em 0; }
 
 @media only screen and (max-width: 1024px) {
-  /* line 420, sass/style.scss */
+  /* line 426, sass/style.scss */
   .pull-quote.alignright, .pull-quote.alignleft {
     width: 40%; } }
 @media only screen and (max-width: 767px) {
-  /* line 429, sass/style.scss */
+  /* line 435, sass/style.scss */
   .pull-quote.alignright, .pull-quote.alignleft {
     width: 100%; } }
+/* =========================================== */
+/* Gravity Forms Customizations
+/* =========================================== */
+/* line 447, sass/style.scss */
+html body .gform_wrapper {
+  max-width: 100%; }
+/* line 450, sass/style.scss */
+html body .gform_wrapper .top_label .gfield_label {
+  margin: 0; }
+/* line 453, sass/style.scss */
+html body .gform_wrapper ul li.gfield {
+  margin: 0.5em 0; }
+/* line 456, sass/style.scss */
+html body .gform_wrapper label.gfield_label + div.ginput_container {
+  margin: 0; }
+/* line 459, sass/style.scss */
+html body .container form span {
+  display: inline-block;
+  margin-bottom: 0; }
+
+/* line 465, sass/style.scss */
+.gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=email], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=number], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=password], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=tel], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=text], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=url], .gform_wrapper .ginput_complex input[type=email], .gform_wrapper .ginput_complex input[type=number], .gform_wrapper .ginput_complex input[type=password], .gform_wrapper .ginput_complex input[type=tel], .gform_wrapper .ginput_complex input[type=text], .gform_wrapper .ginput_complex input[type=url] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }

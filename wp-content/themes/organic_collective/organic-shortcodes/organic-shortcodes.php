@@ -15,7 +15,6 @@ if( !function_exists( 'organic_shortcodes_enqueue_scripts' ) ) {
 	
 		// Enqueue Styles
 		wp_enqueue_style( 'organic-shortcodes', get_template_directory_uri() . '/organic-shortcodes/css/organic-shortcodes.css', array(), '1.0' );
-		wp_enqueue_style( 'organic-shortcodes-ie8', get_template_directory_uri() . '/organic-shortcodes/css/organic-shortcodes-ie8.css', array( 'organic-shortcodes' ), '1.0' );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/organic-shortcodes/css/font-awesome.css', array( 'organic-shortcodes' ), '1.0' );
 		
 		// IE Conditional Styles

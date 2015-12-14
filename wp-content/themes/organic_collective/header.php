@@ -20,10 +20,7 @@
 
 <meta charset="<?php bloginfo('charset'); ?>">
 
-<?php if(get_theme_mod('enable_responsive') == '1') { ?>
-<!-- Mobile View -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php } ?>
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="Shortcut Icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon">

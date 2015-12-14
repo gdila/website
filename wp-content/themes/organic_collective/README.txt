@@ -1,4 +1,4 @@
-Organic Collective Theme v2.0.5
+Organic Collective Theme v2.0.6
 http://www.organicthemes.com
  
 INSTALL: 
@@ -100,3 +100,8 @@ CHANGELOG v2.0.4:
 
 CHANGELOG v2.0.5:
 - Added Jetpack file with SEO fix for featured videos
+
+CHANGELOG v2.0.6:
+- Removed responsive grid option
+- Updated flexslider script
+- Updated shortcodes

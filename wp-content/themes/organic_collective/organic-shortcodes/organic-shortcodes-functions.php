@@ -98,7 +98,7 @@ function organic_accordion_section($atts, $content = null) {
     $x = $GLOBALS["section_count"];
     $GLOBALS["sections"][$x] = array(
         "name"   => sprintf( $name, $GLOBALS["section_count"] ),
-        "content" => $content
+        "content" => do_shortcode($content)
     );
     $GLOBALS["section_count"] += 1;
 }
@@ -147,7 +147,7 @@ function organic_tab( $atts, $content ){
 	), $atts));
 	
 	$x = $GLOBALS['tab_count'];
-	$GLOBALS['tabs'][$x] = array( 'title' => sprintf( $title, $GLOBALS['tab_count'] ), 'content' => $content );
+	$GLOBALS['tabs'][$x] = array( 'title' => sprintf( $title, $GLOBALS['tab_count'] ), 'content' => do_shortcode($content) );
 	
 	$GLOBALS['tab_count']++;
 }
@@ -178,9 +178,9 @@ add_shortcode('icon', 'organic_icons');
 function organic_headline( $atts, $content = null ) {
 
     extract(shortcode_atts(array(
-	    'align'	=> '',
-	    'color'	=> '',
-	    'size'	=> '',
+	    'align'	=> 'left',
+	    'color'	=> '000000',
+	    'size'	=> 'large',
     ), $atts));
 	
 	$out = '<h2 class="organic-headline '.$size.'-headline" style="text-align: '.$align.'; color: #'.$color.';">' .do_shortcode($content). '</h2>';

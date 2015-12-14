@@ -605,19 +605,6 @@ function collective_theme_customizer( $wp_customize ) {
 			'priority' => 80,
 		) ) );
 		
-		// Enable Responsive Grid
-		$wp_customize->add_setting( 'enable_responsive', array(
-			'default'	=> true,
-			'sanitize_callback' => 'collective_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'enable_responsive', array(
-			'label'		=> __( 'Enable Responsive Grid?', 'organicthemes' ),
-			'section'	=> 'collective_layout_section',
-			'settings'	=> 'enable_responsive',
-			'type'		=> 'checkbox',
-			'priority' => 100,
-		) ) );
-		
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Social Section
 	//-------------------------------------------------------------------------------------------------------------------//

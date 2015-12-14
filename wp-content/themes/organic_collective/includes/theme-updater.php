@@ -20,7 +20,7 @@ function collective_theme_sl_updater() {
 	// Setup the updater
 	$edd_updater = new EDD_SL_Theme_Updater( array( 
 			'remote_api_url'=> OT_SL_STORE_URL, 	// our store URL that is running EDD
-			'version' 		=> '2.0.5', 	        // the current theme version we are running
+			'version' 		=> '2.0.6', 	        // the current theme version we are running
 			'license' 		=> $license,			// the license key (used get_option above to retrieve from DB)
 			'item_name' 	=> OT_SL_COLLECTIVE_THEME,	// the name of this theme
 			'author'		=> 'Organic Themes'		// the author's name
