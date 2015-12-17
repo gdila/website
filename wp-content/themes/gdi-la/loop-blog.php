@@ -1,3 +1,4 @@
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <?php if (isset($_POST['featurevid'])){ $custom = get_post_custom($post->ID); $featurevid = $custom['featurevid'][0]; } ?>
 
 <!-- BEGIN .post class -->
@@ -43,3 +44,9 @@
 
 <!-- END .post class -->
 </div>
+<?php endwhile; ?>
+<?php else: ?>
+
+<p><?php _e("Sorry, no posts matched your criteria.", 'organicthemes'); ?></p>
+
+<?php endif; ?>
