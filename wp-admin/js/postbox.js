@@ -50,7 +50,11 @@ var postboxes;
 			this.page = page;
 			this.init( page, args );
 
+<<<<<<< HEAD
 			$handles.on( 'click.postboxes', this.handle_click );
+=======
+			$handles.on( 'click.postboxes',  this.handle_click );
+>>>>>>> origin/master
 
 			$('.postbox .hndle a').click( function(e) {
 				e.stopPropagation();

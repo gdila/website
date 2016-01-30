@@ -592,6 +592,31 @@ function collective_theme_customizer( $wp_customize ) {
 			'priority' => 60,
 		) ) );
 		
+<<<<<<< HEAD
+=======
+		// Enable CSS3 Full Width Background
+		$wp_customize->add_setting( 'background_stretch', array(
+			'default'	=> true,
+			'sanitize_callback' => 'collective_sanitize_checkbox',
+		) );
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'background_stretch', array(
+			'label'		=> __( 'Enable Full Width Background Image?', 'organicthemes' ),
+			'section'	=> 'collective_layout_section',
+			'settings'	=> 'background_stretch',
+			'type'		=> 'checkbox',
+			'priority' => 80,
+		) ) );
+		
+	//-------------------------------------------------------------------------------------------------------------------//
+	// Social Section
+	//-------------------------------------------------------------------------------------------------------------------//
+	
+	$wp_customize->add_section( 'collective_social_section' , array(
+		'title'       => __( 'Social Links', 'organicthemes' ),
+		'priority'    => 105,
+	) );
+		
+>>>>>>> origin/master
 		// Display Social Share Buttons on Single Posts
 		$wp_customize->add_setting( 'display_social_post', array(
 			'default'	=> '1',

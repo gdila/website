@@ -60,6 +60,11 @@ class WP_oEmbed {
 			'#https?://(www\.)?soundcloud\.com/.*#i'              => array( 'http://soundcloud.com/oembed',                              true  ),
 			'#https?://(.+?\.)?slideshare\.net/.*#i'              => array( 'https://www.slideshare.net/api/oembed/2',                   true  ),
 			'#https?://(www\.)?instagr(\.am|am\.com)/p/.*#i'      => array( 'https://api.instagram.com/oembed',                          true  ),
+<<<<<<< HEAD
+=======
+			'#https?://(www\.)?rdio\.com/.*#i'                    => array( 'http://www.rdio.com/api/oembed/',                           true  ),
+			'#https?://rd\.io/x/.*#i'                             => array( 'http://www.rdio.com/api/oembed/',                           true  ),
+>>>>>>> origin/master
 			'#https?://(open|play)\.spotify\.com/.*#i'            => array( 'https://embed.spotify.com/oembed/',                         true  ),
 			'#https?://(.+\.)?imgur\.com/.*#i'                    => array( 'http://api.imgur.com/oembed',                               true  ),
 			'#https?://(www\.)?meetu(\.ps|p\.com)/.*#i'           => array( 'http://api.meetup.com/oembed',                              true  ),
@@ -152,8 +157,11 @@ class WP_oEmbed {
 		 * | Viddler      | viddler.com          |  Yes  | 2.9.0     | 4.0.0     |
 		 * | Revision3    | revision3.com        |  No   | 2.9.0     | 4.2.0     |
 		 * | Blip         | blip.tv              |  No   | 2.9.0     | 4.4.0     |
+<<<<<<< HEAD
 		 * | Rdio         | rdio.com             |  Yes  | 3.6.0     | 4.4.1     |
 		 * | Rdio         | rd.io                |  Yes  | 3.6.0     | 4.4.1     |
+=======
+>>>>>>> origin/master
 		 *
 		 * @see wp_oembed_add_provider()
 		 *

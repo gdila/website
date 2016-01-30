@@ -878,6 +878,7 @@ function wp_get_attachment_image_url( $attachment_id, $size = 'thumbnail', $icon
 }
 
 /**
+<<<<<<< HEAD
  * Get the attachment path relative to the upload directory.
  *
  * @since 4.4.1
@@ -903,6 +904,8 @@ function _wp_get_attachment_relative_path( $file ) {
 }
 
 /**
+=======
+>>>>>>> origin/master
  * Caches and returns the base URL of the uploads directory.
  *
  * @since 4.4.0
@@ -996,6 +999,7 @@ function wp_get_attachment_image_srcset( $attachment_id, $size = 'medium', $imag
  * @return string|bool          The 'srcset' attribute value. False on error or when only one source exists.
  */
 function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attachment_id = 0 ) {
+<<<<<<< HEAD
 	/**
 	 * Let plugins pre-filter the image meta to be able to fix inconsistencies in the stored data.
 	 *
@@ -1006,6 +1010,8 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	 */
 	$image_meta = apply_filters( 'wp_calculate_image_srcset_meta', $image_meta, $size_array, $image_src, $attachment_id );
 
+=======
+>>>>>>> origin/master
 	if ( empty( $image_meta['sizes'] ) ) {
 		return false;
 	}
@@ -1022,6 +1028,10 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	}
 
 	$image_basename = wp_basename( $image_meta['file'] );
+<<<<<<< HEAD
+=======
+	$image_baseurl = _wp_upload_dir_baseurl();
+>>>>>>> origin/master
 
 	/*
 	 * WordPress flattens animated GIFs into one frame when generating intermediate sizes.
@@ -1038,6 +1048,7 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 		return false;
 	}
 
+<<<<<<< HEAD
 	// Retrieve the uploads sub-directory from the full size image.
 	$dirname = _wp_get_attachment_relative_path( $image_meta['file'] );
 
@@ -1047,6 +1058,18 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 
 	$image_baseurl = _wp_upload_dir_baseurl();
 	$image_baseurl = trailingslashit( $image_baseurl ) . $dirname;
+=======
+	// Uploads are (or have been) in year/month sub-directories.
+	if ( $image_basename !== $image_meta['file'] ) {
+		$dirname = dirname( $image_meta['file'] );
+
+		if ( $dirname !== '.' ) {
+			$image_baseurl = trailingslashit( $image_baseurl ) . $dirname;
+		}
+	}
+
+	$image_baseurl = trailingslashit( $image_baseurl );
+>>>>>>> origin/master
 
 	// Calculate the image aspect ratio.
 	$image_ratio = $image_height / $image_width;
@@ -1071,6 +1094,7 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	// Array to hold URL candidates.
 	$sources = array();
 
+<<<<<<< HEAD
 	/**
 	 * To make sure the ID matches our image src, we will check to see if any sizes in our attachment
 	 * meta match our $image_src. If no mathces are found we don't return a srcset to avoid serving
@@ -1078,22 +1102,28 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	 */
 	$src_matched = false;
 
+=======
+>>>>>>> origin/master
 	/*
 	 * Loop through available images. Only use images that are resized
 	 * versions of the same edit.
 	 */
 	foreach ( $image_sizes as $image ) {
 
+<<<<<<< HEAD
 		// If the file name is part of the `src`, we've confirmed a match.
 		if ( ! $src_matched && false !== strpos( $image_src, $dirname . $image['file'] ) ) {
 			$src_matched = true;
 		}
 
+=======
+>>>>>>> origin/master
 		// Filter out images that are from previous edits.
 		if ( $image_edited && ! strpos( $image['file'], $image_edit_hash[0] ) ) {
 			continue;
 		}
 
+<<<<<<< HEAD
 		/*
 		 * Filter out images that are wider than '$max_srcset_image_width' unless
 		 * that file is in the 'src' attribute.
@@ -1101,6 +1131,10 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 		if ( $max_srcset_image_width && $image['width'] > $max_srcset_image_width &&
 			false === strpos( $image_src, $image['file'] ) ) {
 
+=======
+		// Filter out images that are wider than '$max_srcset_image_width'.
+		if ( $max_srcset_image_width && $image['width'] > $max_srcset_image_width ) {
+>>>>>>> origin/master
 			continue;
 		}
 
@@ -1146,7 +1180,11 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	$sources = apply_filters( 'wp_calculate_image_srcset', $sources, $size_array, $image_src, $image_meta, $attachment_id );
 
 	// Only return a 'srcset' value if there is more than one source.
+<<<<<<< HEAD
 	if ( ! $src_matched || count( $sources ) < 2 ) {
+=======
+	if ( count( $sources ) < 2 ) {
+>>>>>>> origin/master
 		return false;
 	}
 
@@ -1328,6 +1366,31 @@ function wp_image_add_srcset_and_sizes( $image, $image_meta, $attachment_id ) {
 		return $image;
 	}
 
+<<<<<<< HEAD
+=======
+	$base_url = trailingslashit( _wp_upload_dir_baseurl() );
+	$image_base_url = $base_url;
+
+	$dirname = dirname( $image_meta['file'] );
+	if ( $dirname !== '.' ) {
+		$image_base_url .= trailingslashit( $dirname );
+	}
+
+	$all_sizes = wp_list_pluck( $image_meta['sizes'], 'file' );
+
+	foreach ( $all_sizes as $key => $file ) {
+		$all_sizes[ $key ] = $image_base_url . $file;
+	}
+
+	// Add the original image.
+	$all_sizes[] = $base_url . $image_meta['file'];
+
+	// Bail early if the image src doesn't match any of the known image sizes.
+	if ( ! in_array( $image_src, $all_sizes ) ) {
+		return $image;
+	}
+
+>>>>>>> origin/master
 	$width  = preg_match( '/ width="([0-9]+)"/',  $image, $match_width  ) ? (int) $match_width[1]  : 0;
 	$height = preg_match( '/ height="([0-9]+)"/', $image, $match_height ) ? (int) $match_height[1] : 0;
 

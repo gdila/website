@@ -530,7 +530,11 @@ final class WP_Screen {
 			}
 		}
 
+<<<<<<< HEAD
 		ksort( $priorities );
+=======
+		sort( $priorities );
+>>>>>>> origin/master
 
 		$sorted = array();
 		foreach ( $priorities as $list ) {
@@ -998,7 +1002,11 @@ final class WP_Screen {
 		 * Filter whether to show the Screen Options submit button.
 		 *
 		 * @since 4.4.0
+<<<<<<< HEAD
 		 *
+=======
+		 * 
+>>>>>>> origin/master
 		 * @param bool      $show_button Whether to show Screen Options submit button.
 		 *                               Default false.
 		 * @param WP_Screen $this        Current WP_Screen instance.
@@ -1087,7 +1095,11 @@ final class WP_Screen {
 
 			$id = "$column-hide";
 			echo '<label>';
+<<<<<<< HEAD
 			echo '<input class="hide-column-tog" name="' . $id . '" type="checkbox" id="' . $id . '" value="' . $column . '"' . checked( ! in_array( $column, $hidden ), true, false ) . ' />';
+=======
+			echo '<input class="hide-column-tog" name="' . $id . '" type="checkbox" value="' . $column . '"' . checked( ! in_array( $column, $hidden ), true, false ) . ' />';
+>>>>>>> origin/master
 			echo "$title</label>\n";
 		}
 		?>

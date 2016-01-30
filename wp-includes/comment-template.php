@@ -703,6 +703,7 @@ function get_comment_link( $comment = null, $args = array() ) {
 	// The 'cpage' param takes precedence.
 	if ( ! is_null( $args['cpage'] ) ) {
 		$cpage = $args['cpage'];
+<<<<<<< HEAD
 
 	// No 'cpage' is provided, so we calculate one.
 	} else {
@@ -726,6 +727,31 @@ function get_comment_link( $comment = null, $args = array() ) {
 			}
 		}
 
+=======
+
+	// No 'cpage' is provided, so we calculate one.
+	} else {
+		if ( '' === $args['per_page'] && get_option( 'page_comments' ) ) {
+			$args['per_page'] = get_option('comments_per_page');
+		}
+
+		if ( empty( $args['per_page'] ) ) {
+			$args['per_page'] = 0;
+			$args['page'] = 0;
+		}
+
+		$cpage = $args['page'];
+
+		if ( '' == $cpage ) {
+			if ( ! empty( $in_comment_loop ) ) {
+				$cpage = get_query_var( 'cpage' );
+			} else {
+				// Requires a database hit, so we only do it when we can't figure out from context.
+				$cpage = get_page_of_comment( $comment->comment_ID, $args );
+			}
+		}
+
+>>>>>>> origin/master
 		/*
 		 * If the default page displays the oldest comments, the permalinks for comments on the default page
 		 * do not need a 'cpage' query var.
@@ -736,7 +762,11 @@ function get_comment_link( $comment = null, $args = array() ) {
 		}
 	}
 
+<<<<<<< HEAD
 	if ( $cpage && get_option( 'page_comments' ) ) {
+=======
+	if ( $cpage ) {
+>>>>>>> origin/master
 		if ( $wp_rewrite->using_permalinks() ) {
 			if ( $cpage ) {
 				$link = trailingslashit( $link ) . $wp_rewrite->comments_pagination_base . '-' . $cpage;
@@ -1313,11 +1343,16 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 		} else {
 			// If fetching the first page of 'newest', we need a top-level comment count.
 			$top_level_query = new WP_Comment_Query();
+<<<<<<< HEAD
 			$top_level_args  = array(
+=======
+			$top_level_count = $top_level_query->query( array(
+>>>>>>> origin/master
 				'count'   => true,
 				'orderby' => false,
 				'post_id' => $post->ID,
 				'parent'  => 0,
+<<<<<<< HEAD
 				'status'  => 'approve',
 			);
 
@@ -1326,6 +1361,9 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 			}
 
 			$top_level_count = $top_level_query->query( $top_level_args );
+=======
+			) );
+>>>>>>> origin/master
 
 			$comment_args['offset'] = ( ceil( $top_level_count / $per_page ) - 1 ) * $per_page;
 		}
@@ -1337,6 +1375,7 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 	// Trees must be flattened before they're passed to the walker.
 	$comments_flat = array();
 	foreach ( $_comments as $_comment ) {
+<<<<<<< HEAD
 		$comments_flat[]  = $_comment;
 		$comment_children = $_comment->get_children( array(
 			'format' => 'flat',
@@ -1347,6 +1386,13 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 		foreach ( $comment_children as $comment_child ) {
 			$comments_flat[] = $comment_child;
 		}
+=======
+		$comments_flat = array_merge( $comments_flat, array( $_comment ), $_comment->get_children( array(
+			'format' => 'flat',
+			'status' => $comment_args['status'],
+			'orderby' => $comment_args['orderby']
+		) ) );
+>>>>>>> origin/master
 	}
 
 	/**
@@ -2217,6 +2263,7 @@ function comment_form( $args = array(), $post_id = null ) {
 					do_action( 'comment_form_top' );
 
 					if ( is_user_logged_in() ) :
+<<<<<<< HEAD
 						/**
 						 * Filter the 'logged in' message for the comment form for display.
 						 *
@@ -2235,6 +2282,26 @@ function comment_form( $args = array(), $post_id = null ) {
 						 *
 						 * @since 3.0.0
 						 *
+=======
+						/**
+						 * Filter the 'logged in' message for the comment form for display.
+						 *
+						 * @since 3.0.0
+						 *
+						 * @param string $args_logged_in The logged-in-as HTML-formatted message.
+						 * @param array  $commenter      An array containing the comment author's
+						 *                               username, email, and URL.
+						 * @param string $user_identity  If the commenter is a registered user,
+						 *                               the display name, blank otherwise.
+						 */
+						echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity );
+
+						/**
+						 * Fires after the is_user_logged_in() check in the comment form.
+						 *
+						 * @since 3.0.0
+						 *
+>>>>>>> origin/master
 						 * @param array  $commenter     An array containing the comment author's
 						 *                              username, email, and URL.
 						 * @param string $user_identity If the commenter is a registered user,

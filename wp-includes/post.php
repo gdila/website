@@ -4290,7 +4290,11 @@ function get_page_uri( $page ) {
 
 	foreach ( $page->ancestors as $parent ) {
 		$parent = get_post( $parent );
+<<<<<<< HEAD
 		if ( $parent ) {
+=======
+		if ( 'publish' === $parent->post_status ) {
+>>>>>>> origin/master
 			$uri = $parent->post_name . '/' . $uri;
 		}
 	}

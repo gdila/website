@@ -415,6 +415,7 @@ html body .container form span {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+<<<<<<< HEAD
 
 /* =========================================== */
 /* Wired Impact Volunteer Customizations
@@ -439,3 +440,5 @@ html body .container form span {
   /* line 484, sass/style.scss */
   #wivm-sign-up-form input[type='submit']:hover {
     background: #333333; }
+=======
+>>>>>>> origin/master

@@ -935,9 +935,15 @@ function get_term_children( $term_id, $taxonomy ) {
  *
  * @since 2.3.0
  * @since 4.4.0 The `$taxonomy` parameter was made optional. `$term` can also now accept a WP_Term object.
+<<<<<<< HEAD
  *
  * @see sanitize_term_field()
  *
+=======
+ *
+ * @see sanitize_term_field()
+ *
+>>>>>>> origin/master
  * @param string      $field    Term field to fetch.
  * @param int|WP_Term $term     Term ID or object.
  * @param string      $taxonomy Optional. Taxonomy Name. Default empty.
@@ -1356,14 +1362,20 @@ function get_terms( $taxonomies, $args = '' ) {
 
 	// Meta query support.
 	$join = '';
+<<<<<<< HEAD
 	$distinct = '';
+=======
+>>>>>>> origin/master
 	if ( ! empty( $args['meta_query'] ) ) {
 		$mquery = new WP_Meta_Query( $args['meta_query'] );
 		$mq_sql = $mquery->get_sql( 'term', 't', 'term_id' );
 
 		$join  .= $mq_sql['join'];
 		$where .= $mq_sql['where'];
+<<<<<<< HEAD
 		$distinct .= "DISTINCT";
+=======
+>>>>>>> origin/master
 	}
 
 	$selects = array();
@@ -1462,6 +1474,32 @@ function get_terms( $taxonomies, $args = '' ) {
 		return apply_filters( 'get_terms', $cache, $taxonomies, $args );
 	}
 
+	// $args can be anything. Only use the args defined in defaults to compute the key.
+	$key = md5( serialize( wp_array_slice_assoc( $args, array_keys( $defaults ) ) ) . serialize( $taxonomies ) . $query );
+	$last_changed = wp_cache_get( 'last_changed', 'terms' );
+	if ( ! $last_changed ) {
+		$last_changed = microtime();
+		wp_cache_set( 'last_changed', $last_changed, 'terms' );
+	}
+	$cache_key = "get_terms:$key:$last_changed";
+	$cache = wp_cache_get( $cache_key, 'terms' );
+	if ( false !== $cache ) {
+		if ( 'all' === $_fields ) {
+			$cache = array_map( 'get_term', $cache );
+		}
+
+		/**
+		 * Filter the given taxonomy's terms cache.
+		 *
+		 * @since 2.3.0
+		 *
+		 * @param array $cache      Cached array of terms for the given taxonomy.
+		 * @param array $taxonomies An array of taxonomies.
+		 * @param array $args       An array of get_terms() arguments.
+		 */
+		return apply_filters( 'get_terms', $cache, $taxonomies, $args );
+	}
+
 	if ( 'count' == $_fields ) {
 		return $wpdb->get_var( $query );
 	}
@@ -1518,6 +1556,7 @@ function get_terms( $taxonomies, $args = '' ) {
 				unset($terms[$k]);
 			}
 		}
+<<<<<<< HEAD
 	}
 
 	$_terms = array();
@@ -1637,6 +1676,127 @@ function get_term_meta( $term_id, $key = '', $single = false ) {
 		return false;
 	}
 
+=======
+	}
+
+	$_terms = array();
+	if ( 'id=>parent' == $_fields ) {
+		foreach ( $terms as $term ) {
+			$_terms[ $term->term_id ] = $term->parent;
+		}
+	} elseif ( 'ids' == $_fields ) {
+		foreach ( $terms as $term ) {
+			$_terms[] = $term->term_id;
+		}
+	} elseif ( 'names' == $_fields ) {
+		foreach ( $terms as $term ) {
+			$_terms[] = $term->name;
+		}
+	} elseif ( 'id=>name' == $_fields ) {
+		foreach ( $terms as $term ) {
+			$_terms[ $term->term_id ] = $term->name;
+		}
+	} elseif ( 'id=>slug' == $_fields ) {
+		foreach ( $terms as $term ) {
+			$_terms[ $term->term_id ] = $term->slug;
+		}
+	}
+
+	if ( ! empty( $_terms ) ) {
+		$terms = $_terms;
+	}
+
+	if ( $number && is_array( $terms ) && count( $terms ) > $number ) {
+		$terms = array_slice( $terms, $offset, $number );
+	}
+
+	wp_cache_add( $cache_key, $terms, 'terms', DAY_IN_SECONDS );
+
+	if ( 'all' === $_fields ) {
+		$terms = array_map( 'get_term', $terms );
+	}
+
+	/** This filter is documented in wp-includes/taxonomy.php */
+	return apply_filters( 'get_terms', $terms, $taxonomies, $args );
+}
+
+/**
+ * Adds metadata to a term.
+ *
+ * @since 4.4.0
+ *
+ * @param int    $term_id    Term ID.
+ * @param string $meta_key   Metadata name.
+ * @param mixed  $meta_value Metadata value.
+ * @param bool   $unique     Optional. Whether to bail if an entry with the same key is found for the term.
+ *                           Default false.
+ * @return int|WP_Error|bool Meta ID on success. WP_Error when term_id is ambiguous between taxonomies.
+ *                           False on failure.
+ */
+function add_term_meta( $term_id, $meta_key, $meta_value, $unique = false ) {
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+	if ( wp_term_is_shared( $term_id ) ) {
+		return new WP_Error( 'ambiguous_term_id', __( 'Term meta cannot be added to terms that are shared between taxonomies.'), $term_id );
+	}
+
+	$added = add_metadata( 'term', $term_id, $meta_key, $meta_value, $unique );
+
+	// Bust term query cache.
+	if ( $added ) {
+		wp_cache_set( 'last_changed', microtime(), 'terms' );
+	}
+
+	return $added;
+}
+
+/**
+ * Removes metadata matching criteria from a term.
+ *
+ * @since 4.4.0
+ *
+ * @param int    $term_id    Term ID.
+ * @param string $meta_key   Metadata name.
+ * @param mixed  $meta_value Optional. Metadata value. If provided, rows will only be removed that match the value.
+ * @return bool True on success, false on failure.
+ */
+function delete_term_meta( $term_id, $meta_key, $meta_value = '' ) {
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+	$deleted = delete_metadata( 'term', $term_id, $meta_key, $meta_value );
+
+	// Bust term query cache.
+	if ( $deleted ) {
+		wp_cache_set( 'last_changed', microtime(), 'terms' );
+	}
+
+	return $deleted;
+}
+
+/**
+ * Retrieves metadata for a term.
+ *
+ * @since 4.4.0
+ *
+ * @param int    $term_id Term ID.
+ * @param string $key     Optional. The meta key to retrieve. If no key is provided, fetches all metadata for the term.
+ * @param bool   $single  Whether to return a single value. If false, an array of all values matching the
+ *                        `$term_id`/`$key` pair will be returned. Default: false.
+ * @return mixed If `$single` is false, an array of metadata values. If `$single` is true, a single metadata value.
+ */
+function get_term_meta( $term_id, $key = '', $single = false ) {
+	// Bail if term meta table is not installed.
+	if ( get_option( 'db_version' ) < 34370 ) {
+		return false;
+	}
+
+>>>>>>> origin/master
 	return get_metadata( 'term', $term_id, $key, $single );
 }
 
@@ -3610,7 +3770,11 @@ function update_object_term_cache($object_ids, $object_type) {
 
 	$terms = wp_get_object_terms( $ids, $taxonomies, array(
 		'fields' => 'all_with_object_id',
+<<<<<<< HEAD
 		'orderby' => 'name',
+=======
+		'orderby' => 'none',
+>>>>>>> origin/master
 		'update_term_meta_cache' => false,
 	) );
 

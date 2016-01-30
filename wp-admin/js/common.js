@@ -397,7 +397,11 @@ $document.ready( function() {
 	 * The `.below-h2` class is here just for backwards compatibility with plugins
 	 * that are (incorrectly) using it. Do not use. Use `.inline` instead. See #34570.
 	 */
+<<<<<<< HEAD
 	$( 'div.updated, div.error, div.notice' ).not( '.inline, .below-h2' ).insertAfter( $( '.wrap h1, .wrap h2' ).first() );
+=======
+	$( 'div.updated, div.error, div.notice' ).not( '.inline, .below-h2' ).insertAfter( $( '.wrap' ).children( ':header' ).first() );
+>>>>>>> origin/master
 
 	// Make notices dismissible
 	function makeNoticesDismissible() {

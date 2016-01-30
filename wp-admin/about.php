@@ -47,6 +47,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 			<a href="credits.php" class="nav-tab"><?php _e( 'Credits' ); ?></a>
 			<a href="freedoms.php" class="nav-tab"><?php _e( 'Freedoms' ); ?></a>
 		</h2>
+<<<<<<< HEAD
 
 		<div class="changelog point-releases">
 			<h3><?php echo _n( 'Maintenance and Security Release', 'Maintenance and Security Releases', 1 ); ?></h3>
@@ -55,6 +56,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				<?php printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.4.1' ); ?>
 			</p>
 		</div>
+=======
+>>>>>>> origin/master
 
 		<div class="headline-feature feature-video">
 			<iframe width="1050" height="591" src="<?php echo esc_url( $video_url ); ?>" frameborder="0" allowfullscreen></iframe>
@@ -75,7 +78,11 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 					<p><?php _e( 'Twenty Sixteen was built to look great on any device. A fluid grid design, flexible header, fun color schemes, and more, will make your content shine.' ); ?></p>
 					<div class="horizontal-image">
 						<div class="content">
+<<<<<<< HEAD
 							<img class="feature-image horizontal-screen" src="https://s.w.org/images/core/4.4/twenty-sixteen-dark-fullsize-2x.png?2" alt=""  srcset="https://s.w.org/images/core/4.4/twenty-sixteen-dark-smartphone-1x.png?2 268w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-smartphone-2x.png?2 535w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-desktop-1x.png?2 558w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-fullsize-1x.png?2 783w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-desktop-2x.png?2 1116w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-fullsize-2x.png?2 1566w" sizes="(max-width: 500px) calc((100vw - 40px) * .8), (max-width: 782px) calc((100vw - 70px) * .8), (max-width: 960px) calc((100vw - 116px) * .5216), (max-width: 1290px) calc((100vw - 240px) * .5216), 548px" />
+=======
+							<img class="feature-image horizontal-screen" src="https://s.w.org/images/core/4.4/twenty-sixteen-dark-fullsize-2x.png" alt=""  srcset="https://s.w.org/images/core/4.4/twenty-sixteen-dark-smartphone-1x.png 268w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-smartphone-2x.png 535w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-desktop-1x.png 558w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-fullsize-1x.png 783w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-desktop-2x.png 1116w, https://s.w.org/images/core/4.4/twenty-sixteen-dark-fullsize-2x.png 1566w" sizes="(max-width: 500px) calc((100vw - 40px) * .8), (max-width: 782px) calc((100vw - 70px) * .8), (max-width: 960px) calc((100vw - 116px) * .5216), (max-width: 1290px) calc((100vw - 240px) * .5216), 548px" />
+>>>>>>> origin/master
 						</div>
 					</div>
 				</div>

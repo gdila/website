@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Organic Collective Theme v2.1.1
+=======
+Organic Collective Theme v2.0.6
+>>>>>>> origin/master
 http://www.organicthemes.com
  
 INSTALL: 
@@ -104,6 +108,7 @@ CHANGELOG v2.0.5:
 CHANGELOG v2.0.6:
 - Removed responsive grid option
 - Updated flexslider script
+<<<<<<< HEAD
 - Updated shortcodes
 
 CHANGELOG v2.1:
@@ -121,3 +126,6 @@ CHANGELOG v2.1:
 
 CHANGELOG v2.1.1:
 - Fix for mobile style on home page
+=======
+- Updated shortcodes
+>>>>>>> origin/master

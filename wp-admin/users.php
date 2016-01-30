@@ -211,6 +211,7 @@ case 'delete':
 	else
 		$userids = array_map( 'intval', (array) $_REQUEST['users'] );
 
+<<<<<<< HEAD
 	$users_have_content = false;
 	if ( $wpdb->get_var( "SELECT ID FROM {$wpdb->posts} WHERE post_author IN( " . implode( ',', $userids ) . " ) LIMIT 1" ) ) {
 		$users_have_content = true;
@@ -219,6 +220,15 @@ case 'delete':
 	}
 
 	if ( $users_have_content ) {
+=======
+	$users_posts = new WP_Query( array(
+		'post_type' => 'any',
+		'author' => implode( ',', $userids ),
+		'posts_per_page' => 1
+	) );
+
+	if ( $users_posts->have_posts() ) {
+>>>>>>> origin/master
 		add_action( 'admin_head', 'delete_users_add_js' );
 	}
 
@@ -258,7 +268,11 @@ case 'delete':
 	</ul>
 <?php if ( $go_delete ) :
 
+<<<<<<< HEAD
 	if ( ! $users_have_content ) : ?>
+=======
+	if ( ! $users_posts->have_posts() ) : ?>
+>>>>>>> origin/master
 		<input type="hidden" name="delete_option" value="delete" />
 	<?php else: ?>
 		<?php if ( 1 == $go_delete ) : ?>

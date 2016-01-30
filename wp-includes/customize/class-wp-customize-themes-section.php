@@ -46,7 +46,11 @@ class WP_Customize_Themes_Section extends WP_Customize_Section {
 				}
 				?>
 
+<<<<<<< HEAD
 				<?php if ( count( $this->controls ) > 0 ) : ?>
+=======
+				<?php if ( count( $this->controls ) > 1 ) : ?>
+>>>>>>> origin/master
 					<button type="button" class="button change-theme" tabindex="0"><?php _ex( 'Change', 'theme' ); ?></button>
 				<?php endif; ?>
 			</h3>

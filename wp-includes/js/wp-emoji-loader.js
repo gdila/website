@@ -39,6 +39,7 @@
 			 */
 			context.fillText( String.fromCharCode( 55356, 56806, 55356, 56826 ), 0, 0 );
 			return canvas.toDataURL().length > 3000;
+<<<<<<< HEAD
 		} else if ( 'diversity' === type ) {
 			/*
 			 * This tests if the browser supports the Emoji Diversity specification, by rendering an
@@ -50,6 +51,8 @@
 			context.fillText( String.fromCharCode( 55356, 57221, 55356, 57343 ), 0, 0 );
 			// Chrome has issues comparing arrays, so we compare it as a  string, instead.
 			return tone !== context.getImageData( 16, 16, 1, 1 ).data.toString();
+=======
+>>>>>>> origin/master
 		} else {
 			if ( 'simple' === type ) {
 				/*
@@ -78,10 +81,16 @@
 	}
 
 	settings.supports = {
+<<<<<<< HEAD
 		simple:    browserSupportsEmoji( 'simple' ),
 		flag:      browserSupportsEmoji( 'flag' ),
 		unicode8:  browserSupportsEmoji( 'unicode8' ),
 		diversity: browserSupportsEmoji( 'diversity' )
+=======
+		simple:   browserSupportsEmoji( 'simple' ),
+		flag:     browserSupportsEmoji( 'flag' ),
+		unicode8: browserSupportsEmoji( 'unicode8' )
+>>>>>>> origin/master
 	};
 
 	settings.DOMReady = false;
@@ -89,7 +98,11 @@
 		settings.DOMReady = true;
 	};
 
+<<<<<<< HEAD
 	if ( ! settings.supports.simple || ! settings.supports.flag || ! settings.supports.unicode8 || ! settings.supports.diversity ) {
+=======
+	if ( ! settings.supports.simple || ! settings.supports.flag || ! settings.supports.unicode8 ) {
+>>>>>>> origin/master
 		ready = function() {
 			settings.readyCallback();
 		};

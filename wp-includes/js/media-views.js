@@ -390,6 +390,7 @@ module.exports = Cropper;
  */
 var Controller = wp.media.controller,
 	CustomizeImageCropper;
+<<<<<<< HEAD
 
 CustomizeImageCropper = Controller.Cropper.extend({
 	doCrop: function( attachment ) {
@@ -411,6 +412,29 @@ CustomizeImageCropper = Controller.Cropper.extend({
 
 module.exports = CustomizeImageCropper;
 
+=======
+
+CustomizeImageCropper = Controller.Cropper.extend({
+	doCrop: function( attachment ) {
+		var cropDetails = attachment.get( 'cropDetails' ),
+			control = this.get( 'control' );
+
+		cropDetails.dst_width  = control.params.width;
+		cropDetails.dst_height = control.params.height;
+
+		return wp.ajax.post( 'crop-image', {
+			wp_customize: 'on',
+			nonce: attachment.get( 'nonces' ).edit,
+			id: attachment.get( 'id' ),
+			context: control.id,
+			cropDetails: cropDetails
+		} );
+	}
+});
+
+module.exports = CustomizeImageCropper;
+
+>>>>>>> origin/master
 },{}],5:[function(require,module,exports){
 /**
  * wp.media.controller.EditImage
@@ -1683,6 +1707,7 @@ module.exports = ReplaceImage;
  */
 var Controller = wp.media.controller,
 	SiteIconCropper;
+<<<<<<< HEAD
 
 SiteIconCropper = Controller.Cropper.extend({
 	activate: function() {
@@ -1705,6 +1730,30 @@ SiteIconCropper = Controller.Cropper.extend({
 		var cropDetails = attachment.get( 'cropDetails' ),
 			control = this.get( 'control' );
 
+=======
+
+SiteIconCropper = Controller.Cropper.extend({
+	activate: function() {
+		this.frame.on( 'content:create:crop', this.createCropContent, this );
+		this.frame.on( 'close', this.removeCropper, this );
+		this.set('selection', new Backbone.Collection(this.frame._selection.single));
+	},
+
+	createCropContent: function() {
+		this.cropperView = new wp.media.view.SiteIconCropper({
+			controller: this,
+			attachment: this.get('selection').first()
+		});
+		this.cropperView.on('image-loaded', this.createCropToolbar, this);
+		this.frame.content.set(this.cropperView);
+
+	},
+
+	doCrop: function( attachment ) {
+		var cropDetails = attachment.get( 'cropDetails' ),
+			control = this.get( 'control' );
+
+>>>>>>> origin/master
 		cropDetails.dst_width  = control.params.width;
 		cropDetails.dst_height = control.params.height;
 
@@ -7446,6 +7495,7 @@ SiteIconCropper = View.Cropper.extend({
 
 	ready: function () {
 		View.Cropper.prototype.ready.apply( this, arguments );
+<<<<<<< HEAD
 
 		this.$( '.crop-image' ).on( 'load', _.bind( this.addSidebar, this ) );
 	},
@@ -7460,6 +7510,22 @@ SiteIconCropper = View.Cropper.extend({
 			attachment: this.options.attachment
 		}) );
 
+=======
+
+		this.$( '.crop-image' ).on( 'load', _.bind( this.addSidebar, this ) );
+	},
+
+	addSidebar: function() {
+		this.sidebar = new wp.media.view.Sidebar({
+			controller: this.controller
+		});
+
+		this.sidebar.set( 'preview', new wp.media.view.SiteIconPreview({
+			controller: this.controller,
+			attachment: this.options.attachment
+		}) );
+
+>>>>>>> origin/master
 		this.controller.cropperView.views.add( this.sidebar );
 	}
 });

@@ -56,6 +56,7 @@ function get_hidden_columns( $screen ) {
 	}
 
 	$hidden = get_user_option( 'manage' . $screen->id . 'columnshidden' );
+<<<<<<< HEAD
 
 	$use_defaults = ! is_array( $hidden );
 
@@ -73,10 +74,28 @@ function get_hidden_columns( $screen ) {
 		$hidden = apply_filters( 'default_hidden_columns', $hidden, $screen );
 	}
 
+=======
+
+	if ( ! $hidden ) {
+		$hidden = array();
+
+		/**
+		 * Filter the default list of hidden columns.
+		 *
+		 * @since 4.4.0
+		 *
+		 * @param array     $hidden An array of columns hidden by default.
+		 * @param WP_Screen $screen WP_Screen object of the current screen.
+		 */
+		$hidden = apply_filters( 'default_hidden_columns', $hidden, $screen );
+	}
+
+>>>>>>> origin/master
 	/**
 	 * Filter the list of hidden columns.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @since 4.4.1		Added the `use_defaults` parameter.
 	 *
 	 * @param array     $hidden An array of hidden columns.
@@ -84,6 +103,13 @@ function get_hidden_columns( $screen ) {
 	 * @param bool      $use_defaults Whether to show the default columns.
 	 */
 	return apply_filters( 'hidden_columns', $hidden, $screen, $use_defaults );
+=======
+	 *
+	 * @param array     $hidden An array of hidden columns.
+	 * @param WP_Screen $screen WP_Screen object of the current screen.
+	 */
+	return apply_filters( 'hidden_columns', $hidden, $screen );
+>>>>>>> origin/master
 }
 
 /**

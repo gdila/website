@@ -1805,7 +1805,11 @@ function wp_new_comment_notify_postauthor( $comment_ID ) {
 	}
 
 	// Only send notifications for approved comments.
+<<<<<<< HEAD
 	if ( ! isset( $comment->comment_approved ) || '1' != $comment->comment_approved ) {
+=======
+	if ( ! isset( $comment->comment_approved ) || 'spam' === $comment->comment_approved || ! $comment->comment_approved ) {
+>>>>>>> origin/master
 		return false;
 	}
 
@@ -2750,7 +2754,11 @@ function wp_handle_comment_submission( $comment_data ) {
 		$comment_author       = $user->display_name;
 		$comment_author_email = $user->user_email;
 		$comment_author_url   = $user->user_url;
+<<<<<<< HEAD
 		$user_ID              = $user->ID;
+=======
+		$user_id              = $user->ID;
+>>>>>>> origin/master
 		if ( current_user_can( 'unfiltered_html' ) ) {
 			if ( ! isset( $comment_data['_wp_unfiltered_html_comment'] )
 				|| ! wp_verify_nonce( $comment_data['_wp_unfiltered_html_comment'], 'unfiltered-html-comment_' . $comment_post_ID )
@@ -2787,7 +2795,11 @@ function wp_handle_comment_submission( $comment_data ) {
 		'comment_content',
 		'comment_type',
 		'comment_parent',
+<<<<<<< HEAD
 		'user_ID'
+=======
+		'user_id'
+>>>>>>> origin/master
 	);
 
 	$comment_id = wp_new_comment( wp_slash( $commentdata ) );

@@ -31,6 +31,7 @@ class PHPMailer
      * The PHPMailer Version number.
      * @var string
      */
+<<<<<<< HEAD
     public $Version = '5.2.14';
 
     /**
@@ -38,6 +39,14 @@ class PHPMailer
      * Options: null (default), 1 = High, 3 = Normal, 5 = low.
      * When null, the header is not set at all.
      * @var integer
+=======
+    public $Version = '5.2.10';
+
+    /**
+     * Email priority.
+     * Options: 1 = High, 3 = Normal, 5 = low.
+     * @type integer
+>>>>>>> origin/master
      */
     public $Priority = null;
 
@@ -88,7 +97,11 @@ class PHPMailer
     /**
      * The Return-Path of the message.
      * If empty, it will be set to either From or Sender.
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      * @deprecated Email senders should never set a return-path header;
      * it's the receiver's job (RFC5321 section 4.4), so this no longer does anything.
      * @link https://tools.ietf.org/html/rfc5321#section-4.4 RFC5321 reference
@@ -151,7 +164,11 @@ class PHPMailer
     /**
      * Word-wrap the message body to this number of chars.
      * Set to 0 to not wrap. A useful value here is 78, for RFC2822 section 2.1.1 compliance.
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     public $WordWrap = 0;
 
@@ -171,7 +188,11 @@ class PHPMailer
     /**
      * Whether mail() uses a fully sendmail-compatible MTA.
      * One which supports sendmail's "-oi -f" options.
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      */
     public $UseSendmailOptions = true;
 
@@ -227,7 +248,11 @@ class PHPMailer
 
     /**
      * The default SMTP server port.
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      * @TODO Why is this needed when the SMTP class takes care of it?
      */
     public $Port = 25;
@@ -244,7 +269,11 @@ class PHPMailer
     /**
      * What kind of encryption to use on the SMTP connection.
      * Options: '', 'ssl' or 'tls'
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      */
     public $SMTPSecure = '';
 
@@ -252,14 +281,22 @@ class PHPMailer
      * Whether to enable TLS encryption automatically if a server supports it,
      * even if `SMTPSecure` is not set to 'tls'.
      * Be aware that in PHP >= 5.6 this requires that the server's certificates are valid.
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      */
     public $SMTPAutoTLS = true;
 
     /**
      * Whether to use SMTP authentication.
      * Uses the Username and Password properties.
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      * @see PHPMailer::$Username
      * @see PHPMailer::$Password
      */
@@ -267,7 +304,11 @@ class PHPMailer
 
     /**
      * Options array passed to stream_context_create when connecting via SMTP.
+<<<<<<< HEAD
      * @var array
+=======
+     * @type array
+>>>>>>> origin/master
      */
     public $SMTPOptions = array();
 
@@ -307,7 +348,11 @@ class PHPMailer
     /**
      * The SMTP server timeout in seconds.
      * Default of 5 minutes (300sec) is from RFC2821 section 4.5.3.2
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     public $Timeout = 300;
 
@@ -320,7 +365,11 @@ class PHPMailer
      * * `2` Data and commands
      * * `3` As 2 plus connection status
      * * `4` Low-level data output
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      * @see SMTP::$do_debug
      */
     public $SMTPDebug = 0;
@@ -336,7 +385,11 @@ class PHPMailer
      * <code>
      * $mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";};
      * </code>
+<<<<<<< HEAD
      * @var string|callable
+=======
+     * @type string|callable
+>>>>>>> origin/master
      * @see SMTP::$Debugoutput
      */
     public $Debugoutput = 'echo';
@@ -345,20 +398,32 @@ class PHPMailer
      * Whether to keep SMTP connection open after each message.
      * If this is set to true then to close the connection
      * requires an explicit call to smtpClose().
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      */
     public $SMTPKeepAlive = false;
 
     /**
      * Whether to split multiple to addresses into multiple messages
      * or send them all in one message.
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      */
     public $SingleTo = false;
 
     /**
      * Storage for addresses when SingleTo is enabled.
+<<<<<<< HEAD
      * @var array
+=======
+     * @type array
+>>>>>>> origin/master
      * @TODO This should really not be public
      */
     public $SingleToArray = array();
@@ -366,15 +431,25 @@ class PHPMailer
     /**
      * Whether to generate VERP addresses on send.
      * Only applicable when sending via SMTP.
+<<<<<<< HEAD
      * @link https://en.wikipedia.org/wiki/Variable_envelope_return_path
      * @link http://www.postfix.org/VERP_README.html Postfix VERP info
      * @var boolean
+=======
+     * @link http://en.wikipedia.org/wiki/Variable_envelope_return_path
+     * @link http://www.postfix.org/VERP_README.html Postfix VERP info
+     * @type boolean
+>>>>>>> origin/master
      */
     public $do_verp = false;
 
     /**
      * Whether to allow sending messages with an empty body.
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      */
     public $AllowEmpty = false;
 
@@ -435,14 +510,22 @@ class PHPMailer
      *   string  $subject       the subject
      *   string  $body          the email body
      *   string  $from          email address of sender
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      */
     public $action_function = '';
 
     /**
      * What to put in the X-Mailer header.
      * Options: An empty string for PHPMailer default, whitespace for none, or a string to use
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      */
     public $XMailer = '';
 
@@ -484,7 +567,11 @@ class PHPMailer
     /**
      * An array of all kinds of addresses.
      * Includes all of $to, $cc, $bcc
+<<<<<<< HEAD
      * @var array
+=======
+     * @type array
+>>>>>>> origin/master
      * @access protected
      * @see PHPMailer::$to @see PHPMailer::$cc @see PHPMailer::$bcc
      */
@@ -577,7 +664,11 @@ class PHPMailer
 
     /**
      * The optional S/MIME extra certificates ("CA Chain") file path.
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      * @access protected
      */
     protected $sign_extracerts_file = '';
@@ -592,14 +683,22 @@ class PHPMailer
 
     /**
      * Whether to throw exceptions for errors.
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      * @access protected
      */
     protected $exceptions = false;
 
     /**
      * Unique ID used for message ID and boundaries.
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      * @access protected
      */
     protected $uniqueid = '';
@@ -626,7 +725,11 @@ class PHPMailer
 
     /**
      * The maximum line length allowed by RFC 2822 section 2.1.1
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     const MAX_LINE_LENGTH = 998;
 
@@ -790,7 +893,11 @@ class PHPMailer
      * Add a "To" address.
      * @param string $address The email address to send to
      * @param string $name
+<<<<<<< HEAD
      * @return boolean true on success, false if address already used or invalid in some way
+=======
+     * @return boolean true on success, false if address already used
+>>>>>>> origin/master
      */
     public function addAddress($address, $name = '')
     {
@@ -802,7 +909,11 @@ class PHPMailer
      * @note: This function works with the SMTP mailer on win32, not with the "mail" mailer.
      * @param string $address The email address to send to
      * @param string $name
+<<<<<<< HEAD
      * @return boolean true on success, false if address already used or invalid in some way
+=======
+     * @return boolean true on success, false if address already used
+>>>>>>> origin/master
      */
     public function addCC($address, $name = '')
     {
@@ -814,7 +925,11 @@ class PHPMailer
      * @note: This function works with the SMTP mailer on win32, not with the "mail" mailer.
      * @param string $address The email address to send to
      * @param string $name
+<<<<<<< HEAD
      * @return boolean true on success, false if address already used or invalid in some way
+=======
+     * @return boolean true on success, false if address already used
+>>>>>>> origin/master
      */
     public function addBCC($address, $name = '')
     {
@@ -825,7 +940,11 @@ class PHPMailer
      * Add a "Reply-To" address.
      * @param string $address The email address to reply to
      * @param string $name
+<<<<<<< HEAD
      * @return boolean true on success, false if address already used or invalid in some way
+=======
+     * @return boolean
+>>>>>>> origin/master
      */
     public function addReplyTo($address, $name = '')
     {
@@ -842,6 +961,7 @@ class PHPMailer
      * @param string $name
      * @throws phpmailerException
      * @return boolean true on success, false if address already used or invalid in some way
+<<<<<<< HEAD
      * @access protected
      */
     protected function addOrEnqueueAnAddress($kind, $address, $name)
@@ -886,23 +1006,36 @@ class PHPMailer
      * @param string $name
      * @throws phpmailerException
      * @return boolean true on success, false if address already used or invalid in some way
+=======
+>>>>>>> origin/master
      * @access protected
      */
     protected function addAnAddress($kind, $address, $name = '')
     {
+<<<<<<< HEAD
         if (!in_array($kind, array('to', 'cc', 'bcc', 'Reply-To'))) {
             $error_message = $this->lang('Invalid recipient kind: ') . $kind;
             $this->setError($error_message);
             $this->edebug($error_message);
+=======
+        if (!preg_match('/^(to|cc|bcc|Reply-To)$/', $kind)) {
+            $this->setError($this->lang('Invalid recipient array') . ': ' . $kind);
+            $this->edebug($this->lang('Invalid recipient array') . ': ' . $kind);
+>>>>>>> origin/master
             if ($this->exceptions) {
                 throw new phpmailerException($error_message);
             }
             return false;
         }
         if (!$this->validateAddress($address)) {
+<<<<<<< HEAD
             $error_message = $this->lang('invalid_address') . $address;
             $this->setError($error_message);
             $this->edebug($error_message);
+=======
+            $this->setError($this->lang('invalid_address') . ': ' . $address);
+            $this->edebug($this->lang('invalid_address') . ': ' . $address);
+>>>>>>> origin/master
             if ($this->exceptions) {
                 throw new phpmailerException($error_message);
             }
@@ -935,6 +1068,7 @@ class PHPMailer
     {
         $address = trim($address);
         $name = trim(preg_replace('/[\r\n]+/', '', $name)); //Strip breaks and trim
+<<<<<<< HEAD
         // Don't validate now addresses with IDN. Will be done in send().
         if (($pos = strrpos($address, '@')) === false or
             (!$this->has8bitChars(substr($address, ++$pos)) or !$this->idnSupported()) and
@@ -942,6 +1076,11 @@ class PHPMailer
             $error_message = $this->lang('invalid_address') . $address;
             $this->setError($error_message);
             $this->edebug($error_message);
+=======
+        if (!$this->validateAddress($address)) {
+            $this->setError($this->lang('invalid_address') . ': ' . $address);
+            $this->edebug($this->lang('invalid_address') . ': ' . $address);
+>>>>>>> origin/master
             if ($this->exceptions) {
                 throw new phpmailerException($error_message);
             }
@@ -973,10 +1112,17 @@ class PHPMailer
      * Check that a string looks like an email address.
      * @param string $address The email address to check
      * @param string $patternselect A selector for the validation pattern to use :
+<<<<<<< HEAD
      * * `auto` Pick best pattern automatically;
      * * `pcre8` Use the squiloople.com pattern, requires PCRE > 8.0, PHP >= 5.3.2, 5.2.14;
      * * `pcre` Use old PCRE implementation;
      * * `php` Use PHP built-in FILTER_VALIDATE_EMAIL;
+=======
+     * * `auto` Pick strictest one automatically;
+     * * `pcre8` Use the squiloople.com pattern, requires PCRE > 8.0, PHP >= 5.3.2, 5.2.14;
+     * * `pcre` Use old PCRE implementation;
+     * * `php` Use PHP built-in FILTER_VALIDATE_EMAIL; same as pcre8 but does not allow 'dotless' domains;
+>>>>>>> origin/master
      * * `html5` Use the pattern given by the HTML5 spec for 'email' type form input elements.
      * * `noregex` Don't use a regex: super fast, really dumb.
      * @return boolean
@@ -985,10 +1131,13 @@ class PHPMailer
      */
     public static function validateAddress($address, $patternselect = 'auto')
     {
+<<<<<<< HEAD
         //Reject line breaks in addresses; it's valid RFC5322, but not RFC5321
         if (strpos($address, "\n") !== false or strpos($address, "\r") !== false) {
             return false;
         }
+=======
+>>>>>>> origin/master
         if (!$patternselect or $patternselect == 'auto') {
             //Check this constant first so it works when extension_loaded() is disabled by safe mode
             //Constant was added in PHP 5.2.4
@@ -1065,6 +1214,7 @@ class PHPMailer
             case 'php':
             default:
                 return (boolean)filter_var($address, FILTER_VALIDATE_EMAIL);
+<<<<<<< HEAD
         }
     }
 
@@ -1106,6 +1256,8 @@ class PHPMailer
                     return substr($address, 0, $pos) . $punycode;
                 }
             }
+=======
+>>>>>>> origin/master
         }
         return $address;
     }
@@ -1141,6 +1293,7 @@ class PHPMailer
     public function preSend()
     {
         try {
+<<<<<<< HEAD
             $this->error_count = 0; // Reset errors
             $this->mailHeader = '';
 
@@ -1149,6 +1302,9 @@ class PHPMailer
                 $params[1] = $this->punyencodeAddress($params[1]);
                 call_user_func_array(array($this, 'addAnAddress'), $params);
             }
+=======
+            $this->mailHeader = '';
+>>>>>>> origin/master
             if ((count($this->to) + count($this->cc) + count($this->bcc)) < 1) {
                 throw new phpmailerException($this->lang('provide_address'), self::STOP_CRITICAL);
             }
@@ -1176,6 +1332,10 @@ class PHPMailer
                 $this->ContentType = 'multipart/alternative';
             }
 
+<<<<<<< HEAD
+=======
+            $this->error_count = 0; // Reset errors
+>>>>>>> origin/master
             $this->setMessageType();
             // Refuse to send an empty message unless we are specifically allowing it
             if (!$this->AllowEmpty and empty($this->Body)) {
@@ -1316,6 +1476,7 @@ class PHPMailer
             fputs($mail, $header);
             fputs($mail, $body);
             $result = pclose($mail);
+<<<<<<< HEAD
             $this->doCallback(
                 ($result == 0),
                 $this->to,
@@ -1325,6 +1486,9 @@ class PHPMailer
                 $body,
                 $this->From
             );
+=======
+            $this->doCallback(($result == 0), $this->to, $this->cc, $this->bcc, $this->Subject, $body, $this->From);
+>>>>>>> origin/master
             if ($result != 0) {
                 throw new phpmailerException($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
             }
@@ -1875,6 +2039,10 @@ class PHPMailer
             $this->MessageDate = self::rfcDate();
         }
         $result .= $this->headerLine('Date', $this->MessageDate);
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
         // To be created automatically by mail()
         if ($this->SingleTo) {
@@ -1921,12 +2089,19 @@ class PHPMailer
         if ($this->MessageID != '') {
             $this->lastMessageID = $this->MessageID;
         } else {
+<<<<<<< HEAD
             $this->lastMessageID = sprintf('<%s@%s>', $this->uniqueid, $this->serverHostname());
         }
         $result .= $this->headerLine('Message-ID', $this->lastMessageID);
         if (!is_null($this->Priority)) {
             $result .= $this->headerLine('X-Priority', $this->Priority);
         }
+=======
+            $this->lastMessageID = sprintf('<%s@%s>', $this->uniqueid, $this->ServerHostname());
+        }
+        $result .= $this->headerLine('Message-ID', $this->lastMessageID);
+        $result .= $this->headerLine('X-Priority', $this->Priority);
+>>>>>>> origin/master
         if ($this->XMailer == '') {
             $result .= $this->headerLine(
                 'X-Mailer',
@@ -2426,6 +2601,7 @@ class PHPMailer
                 $cidUniq[$cid] = true;
 
                 $mime[] = sprintf('--%s%s', $boundary, $this->LE);
+<<<<<<< HEAD
                 //Only include a filename property if we have one
                 if (!empty($name)) {
                     $mime[] = sprintf(
@@ -2441,6 +2617,14 @@ class PHPMailer
                         $this->LE
                     );
                 }
+=======
+                $mime[] = sprintf(
+                    'Content-Type: %s; name="%s"%s',
+                    $type,
+                    $this->encodeHeader($this->secureHeader($name)),
+                    $this->LE
+                );
+>>>>>>> origin/master
                 // RFC1341 part 5 says 7bit is assumed if not specified
                 if ($encoding != '7bit') {
                     $mime[] = sprintf('Content-Transfer-Encoding: %s%s', $encoding, $this->LE);
@@ -2464,6 +2648,7 @@ class PHPMailer
                             $this->LE . $this->LE
                         );
                     } else {
+<<<<<<< HEAD
                         if (!empty($encoded_name)) {
                             $mime[] = sprintf(
                                 'Content-Disposition: %s; filename=%s%s',
@@ -2478,6 +2663,14 @@ class PHPMailer
                                 $this->LE . $this->LE
                             );
                         }
+=======
+                        $mime[] = sprintf(
+                            'Content-Disposition: %s; filename=%s%s',
+                            $disposition,
+                            $encoded_name,
+                            $this->LE . $this->LE
+                        );
+>>>>>>> origin/master
                     }
                 } else {
                     $mime[] = $this->LE;
@@ -2730,7 +2923,11 @@ class PHPMailer
     {
         // Use native function if it's available (>= PHP5.3)
         if (function_exists('quoted_printable_encode')) {
+<<<<<<< HEAD
             return quoted_printable_encode($string);
+=======
+            return $this->fixEOL(quoted_printable_encode($string));
+>>>>>>> origin/master
         }
         // Fall back to a pure PHP implementation
         $string = str_replace(
@@ -2738,7 +2935,12 @@ class PHPMailer
             array(' ', "\r\n=2E", "\r\n", '='),
             rawurlencode($string)
         );
+<<<<<<< HEAD
         return preg_replace('/[^\r\n]{' . ($line_max - 3) . '}[^=\r\n]{2}/', "$0=\r\n", $string);
+=======
+        $string = preg_replace('/[^\r\n]{' . ($line_max - 3) . '}[^=\r\n]{2}/', "$0=\r\n", $string);
+        return $this->fixEOL($string);
+>>>>>>> origin/master
     }
 
     /**
@@ -2912,7 +3114,11 @@ class PHPMailer
         $disposition = 'inline'
     ) {
         // If a MIME type is not specified, try to work it out from the name
+<<<<<<< HEAD
         if ($type == '' and !empty($name)) {
+=======
+        if ($type == '') {
+>>>>>>> origin/master
             $type = self::filenameToType($name);
         }
 
@@ -3200,7 +3406,12 @@ class PHPMailer
     }
 
     /**
+<<<<<<< HEAD
      * Returns all custom headers.
+=======
+     * Returns all custom headers
+     *
+>>>>>>> origin/master
      * @return array
      */
     public function getCustomHeaders()
@@ -3217,13 +3428,21 @@ class PHPMailer
      * @param string $message HTML message string
      * @param string $basedir baseline directory for path
      * @param boolean|callable $advanced Whether to use the internal HTML to text converter
+<<<<<<< HEAD
      *    or your own custom converter @see PHPMailer::html2text()
+=======
+     *    or your own custom converter @see html2text()
+>>>>>>> origin/master
      * @return string $message
      */
     public function msgHTML($message, $basedir = '', $advanced = false)
     {
         preg_match_all('/(src|background)=["\'](.*)["\']/Ui', $message, $images);
+<<<<<<< HEAD
         if (array_key_exists(2, $images)) {
+=======
+        if (isset($images[2])) {
+>>>>>>> origin/master
             foreach ($images[2] as $imgindex => $url) {
                 // Convert data URIs into embedded images
                 if (preg_match('#^data:(image[^;,]*)(;base64)?,#', $url, $match)) {
@@ -3234,16 +3453,25 @@ class PHPMailer
                         $data = rawurldecode($data);
                     }
                     $cid = md5($url) . '@phpmailer.0'; // RFC2392 S 2
+<<<<<<< HEAD
                     if ($this->addStringEmbeddedImage($data, $cid, 'embed' . $imgindex, 'base64', $match[1])) {
+=======
+                    if ($this->addStringEmbeddedImage($data, $cid, '', 'base64', $match[1])) {
+>>>>>>> origin/master
                         $message = str_replace(
                             $images[0][$imgindex],
                             $images[1][$imgindex] . '="cid:' . $cid . '"',
                             $message
                         );
                     }
+<<<<<<< HEAD
                 } elseif (substr($url, 0, 4) !== 'cid:' && !preg_match('#^[A-z]+://#', $url)) {
                     // Do not change urls for absolute images (thanks to corvuscorax)
                     // Do not change urls that are already inline images
+=======
+                } elseif (!preg_match('#^[A-z]+://#', $url)) {
+                    // Do not change urls for absolute images (thanks to corvuscorax)
+>>>>>>> origin/master
                     $filename = basename($url);
                     $directory = dirname($url);
                     if ($directory == '.') {
@@ -3333,6 +3561,7 @@ class PHPMailer
             'bin'   => 'application/macbinary',
             'doc'   => 'application/msword',
             'word'  => 'application/msword',
+<<<<<<< HEAD
             'xlsx'  => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             'xltx'  => 'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
             'potx'  => 'application/vnd.openxmlformats-officedocument.presentationml.template',
@@ -3343,6 +3572,8 @@ class PHPMailer
             'dotx'  => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
             'xlam'  => 'application/vnd.ms-excel.addin.macroEnabled.12',
             'xlsb'  => 'application/vnd.ms-excel.sheet.binary.macroEnabled.12',
+=======
+>>>>>>> origin/master
             'class' => 'application/octet-stream',
             'dll'   => 'application/octet-stream',
             'dms'   => 'application/octet-stream',
@@ -3738,7 +3969,10 @@ class PHPMailer
 
     /**
      * Allows for public read access to 'to' property.
+<<<<<<< HEAD
      * @note: Before the send() call, queued addresses (i.e. with IDN) are not yet included.
+=======
+>>>>>>> origin/master
      * @access public
      * @return array
      */
@@ -3749,7 +3983,10 @@ class PHPMailer
 
     /**
      * Allows for public read access to 'cc' property.
+<<<<<<< HEAD
      * @note: Before the send() call, queued addresses (i.e. with IDN) are not yet included.
+=======
+>>>>>>> origin/master
      * @access public
      * @return array
      */
@@ -3760,7 +3997,10 @@ class PHPMailer
 
     /**
      * Allows for public read access to 'bcc' property.
+<<<<<<< HEAD
      * @note: Before the send() call, queued addresses (i.e. with IDN) are not yet included.
+=======
+>>>>>>> origin/master
      * @access public
      * @return array
      */
@@ -3771,7 +4011,10 @@ class PHPMailer
 
     /**
      * Allows for public read access to 'ReplyTo' property.
+<<<<<<< HEAD
      * @note: Before the send() call, queued addresses (i.e. with IDN) are not yet included.
+=======
+>>>>>>> origin/master
      * @access public
      * @return array
      */
@@ -3782,7 +4025,10 @@ class PHPMailer
 
     /**
      * Allows for public read access to 'all_recipients' property.
+<<<<<<< HEAD
      * @note: Before the send() call, queued addresses (i.e. with IDN) are not yet included.
+=======
+>>>>>>> origin/master
      * @access public
      * @return array
      */

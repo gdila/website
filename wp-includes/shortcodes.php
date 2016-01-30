@@ -95,7 +95,11 @@ function add_shortcode($tag, $func) {
 		return;
 	}
 
+<<<<<<< HEAD
 	if ( 0 !== preg_match( '@[<>&/\[\]\x00-\x20=]@', $tag ) ) {
+=======
+	if ( 0 !== preg_match( '@[<>&/\[\]\x00-\x20]@', $tag ) ) {
+>>>>>>> origin/master
 		/* translators: %s: shortcode name */
 		$message = sprintf( __( 'Invalid shortcode name: %s. Do not use spaces or reserved characters: & / < > [ ]' ), $tag );
 		_doing_it_wrong( __FUNCTION__, $message, '4.4.0' );
@@ -210,7 +214,11 @@ function do_shortcode( $content, $ignore_html = false ) {
 		return $content;
 
 	// Find all registered tag names in $content.
+<<<<<<< HEAD
 	preg_match_all( '@\[([^<>&/\[\]\x00-\x20=]++)@', $content, $matches );
+=======
+	preg_match_all( '@\[([^<>&/\[\]\x00-\x20]++)@', $content, $matches );
+>>>>>>> origin/master
 	$tagnames = array_intersect( array_keys( $shortcode_tags ), $matches[1] );
 
 	if ( empty( $tagnames ) ) {
@@ -578,7 +586,11 @@ function strip_shortcodes( $content ) {
 		return $content;
 
 	// Find all registered tag names in $content.
+<<<<<<< HEAD
 	preg_match_all( '@\[([^<>&/\[\]\x00-\x20=]++)@', $content, $matches );
+=======
+	preg_match_all( '@\[([^<>&/\[\]\x00-\x20]++)@', $content, $matches );
+>>>>>>> origin/master
 	$tagnames = array_intersect( array_keys( $shortcode_tags ), $matches[1] );
 
 	if ( empty( $tagnames ) ) {

@@ -607,9 +607,15 @@ function dynamic_sidebar( $index = 1 ) {
 	if ( is_int( $index ) ) {
 		$index = "sidebar-$index";
 	} else {
+<<<<<<< HEAD
 		$index = sanitize_title( $index );
 		foreach ( (array) $wp_registered_sidebars as $key => $value ) {
 			if ( sanitize_title( $value['name'] ) == $index ) {
+=======
+		$sanitized_index = sanitize_title( $index );
+		foreach ( (array) $wp_registered_sidebars as $key => $value ) {
+			if ( sanitize_title( $value['name'] ) == $sanitized_index ) {
+>>>>>>> origin/master
 				$index = $key;
 				break;
 			}

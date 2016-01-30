@@ -172,11 +172,14 @@ function date_i18n( $dateformatstring, $unixtimestamp = false, $gmt = false ) {
 function wp_maybe_decline_date( $date ) {
 	global $wp_locale;
 
+<<<<<<< HEAD
 	// i18n functions are not available in SHORTINIT mode
 	if ( ! function_exists( '_x' ) ) {
 		return $date;
 	}
 
+=======
+>>>>>>> origin/master
 	/* translators: If months in your language require a genitive case,
 	 * translate this to 'on'. Do not translate into your own language.
 	 */
@@ -748,12 +751,21 @@ function _http_build_query( $data, $prefix = null, $sep = null, $key = '', $urle
  *         'key1' => 'value1',
  *         'key2' => 'value2',
  *     ), 'http://example.com' );
+<<<<<<< HEAD
  *
  * Omitting the URL from either use results in the current URL being used
  * (the value of `$_SERVER['REQUEST_URI']`).
  *
  * Values are expected to be encoded appropriately with urlencode() or rawurlencode().
  *
+=======
+ *
+ * Omitting the URL from either use results in the current URL being used
+ * (the value of `$_SERVER['REQUEST_URI']`).
+ *
+ * Values are expected to be encoded appropriately with urlencode() or rawurlencode().
+ *
+>>>>>>> origin/master
  * Setting any query variable's value to boolean false removes the key (see remove_query_arg()).
  *
  * Important: The return value of add_query_arg() is not escaped by default. Output should be

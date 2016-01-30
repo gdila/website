@@ -3502,12 +3502,17 @@ function rel_canonical() {
 	$url = get_permalink( $id );
 
 	$page = get_query_var( 'page' );
+<<<<<<< HEAD
 	if ( $page >= 2 ) {
 		if ( '' == get_option( 'permalink_structure' ) ) {
 			$url = add_query_arg( 'page', $page, $url );
 		} else {
 			$url = trailingslashit( $url ) . user_trailingslashit( $page, 'single_paged' );
 		}
+=======
+	if ( $page ) {
+		$url = trailingslashit( $url ) . user_trailingslashit( $page, 'single_paged' );
+>>>>>>> origin/master
 	}
 
 	$cpage = get_query_var( 'cpage' );

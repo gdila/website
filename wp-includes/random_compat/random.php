@@ -90,6 +90,7 @@ if (PHP_VERSION_ID < 70000) {
             extension_loaded('com_dotnet') &&
             class_exists('COM')
         ) {
+<<<<<<< HEAD
             $RandomCompat_disabled_classes = preg_split(
                 '#\s*,\s*#', 
                 strtolower(ini_get('disable_classes'))
@@ -107,6 +108,17 @@ if (PHP_VERSION_ID < 70000) {
                 }
             }
             $RandomCompat_disabled_classes = null;
+=======
+            try {
+                $RandomCompatCOMtest = new COM('CAPICOM.Utilities.1');
+                if (method_exists($RandomCompatCOMtest, 'GetRandom')) {
+                    // See random_bytes_com_dotnet.php
+                    require_once $RandomCompatDIR.'/random_bytes_com_dotnet.php';
+                }
+            } catch (com_exception $e) {
+                // Don't try to use it.
+            }
+>>>>>>> origin/master
             $RandomCompatCOMtest = null;
         }
         if (

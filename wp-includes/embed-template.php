@@ -50,7 +50,11 @@ if ( have_posts() ) :
 			$image_size   = 'full'; // Fallback.
 
 			$meta = wp_get_attachment_metadata( $thumbnail_id );
+<<<<<<< HEAD
 			if ( ! empty( $meta['sizes'] ) ) {
+=======
+			if ( is_array( $meta ) ) {
+>>>>>>> origin/master
 				foreach ( $meta['sizes'] as $size => $data ) {
 					if ( $data['width'] / $data['height'] > $aspect_ratio ) {
 						$aspect_ratio = $data['width'] / $data['height'];

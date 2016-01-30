@@ -28,6 +28,7 @@ class SMTP
 {
     /**
      * The PHPMailer SMTP version number.
+<<<<<<< HEAD
      * @var string
      */
     const VERSION = '5.2.14';
@@ -35,18 +36,35 @@ class SMTP
     /**
      * SMTP line break constant.
      * @var string
+=======
+     * @type string
+     */
+    const VERSION = '5.2.10';
+
+    /**
+     * SMTP line break constant.
+     * @type string
+>>>>>>> origin/master
      */
     const CRLF = "\r\n";
 
     /**
      * The SMTP port to use if one is not specified.
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     const DEFAULT_SMTP_PORT = 25;
 
     /**
      * The maximum line length allowed by RFC 2822 section 2.1.1
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     const MAX_LINE_LENGTH = 998;
 
@@ -77,6 +95,7 @@ class SMTP
 
     /**
      * The PHPMailer SMTP Version number.
+<<<<<<< HEAD
      * @var string
      * @deprecated Use the `VERSION` constant instead
      * @see SMTP::VERSION
@@ -86,6 +105,17 @@ class SMTP
     /**
      * SMTP server port number.
      * @var integer
+=======
+     * @type string
+     * @deprecated Use the `VERSION` constant instead
+     * @see SMTP::VERSION
+     */
+    public $Version = '5.2.10';
+
+    /**
+     * SMTP server port number.
+     * @type integer
+>>>>>>> origin/master
      * @deprecated This is only ever used as a default value, so use the `DEFAULT_SMTP_PORT` constant instead
      * @see SMTP::DEFAULT_SMTP_PORT
      */
@@ -93,7 +123,11 @@ class SMTP
 
     /**
      * SMTP reply line ending.
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      * @deprecated Use the `CRLF` constant instead
      * @see SMTP::CRLF
      */
@@ -107,7 +141,11 @@ class SMTP
      * * self::DEBUG_SERVER (`2`) Client commands and server responses
      * * self::DEBUG_CONNECTION (`3`) As DEBUG_SERVER plus connection status
      * * self::DEBUG_LOWLEVEL (`4`) Low-level data output, all messages
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     public $do_debug = self::DEBUG_OFF;
 
@@ -122,7 +160,11 @@ class SMTP
      * <code>
      * $smtp->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";};
      * </code>
+<<<<<<< HEAD
      * @var string|callable
+=======
+     * @type string|callable
+>>>>>>> origin/master
      */
     public $Debugoutput = 'echo';
 
@@ -130,7 +172,11 @@ class SMTP
      * Whether to use VERP.
      * @link http://en.wikipedia.org/wiki/Variable_envelope_return_path
      * @link http://www.postfix.org/VERP_README.html Info on VERP
+<<<<<<< HEAD
      * @var boolean
+=======
+     * @type boolean
+>>>>>>> origin/master
      */
     public $do_verp = false;
 
@@ -139,14 +185,22 @@ class SMTP
      * Default of 5 minutes (300sec) is from RFC2821 section 4.5.3.2
      * This needs to be quite high to function correctly with hosts using greetdelay as an anti-spam measure.
      * @link http://tools.ietf.org/html/rfc2821#section-4.5.3.2
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     public $Timeout = 300;
 
     /**
      * How long to wait for commands to complete, in seconds.
      * Default of 5 minutes (300sec) is from RFC2821 section 4.5.3.2
+<<<<<<< HEAD
      * @var integer
+=======
+     * @type integer
+>>>>>>> origin/master
      */
     public $Timelimit = 300;
 
@@ -158,7 +212,11 @@ class SMTP
 
     /**
      * Error information, if any, for the last SMTP command.
+<<<<<<< HEAD
      * @var array
+=======
+     * @type array
+>>>>>>> origin/master
      */
     protected $error = array(
         'error' => '',
@@ -170,7 +228,11 @@ class SMTP
     /**
      * The reply the server sent to us for HELO.
      * If null, no HELO string has yet been received.
+<<<<<<< HEAD
      * @var string|null
+=======
+     * @type string|null
+>>>>>>> origin/master
      */
     protected $helo_rply = null;
 
@@ -181,13 +243,21 @@ class SMTP
      * represents the server name. In case of HELO it is the only element of the array.
      * Other values can be boolean TRUE or an array containing extension options.
      * If null, no HELO/EHLO string has yet been received.
+<<<<<<< HEAD
      * @var array|null
+=======
+     * @type array|null
+>>>>>>> origin/master
      */
     protected $server_caps = null;
 
     /**
      * The most recent reply received from the server.
+<<<<<<< HEAD
      * @var string
+=======
+     * @type string
+>>>>>>> origin/master
      */
     protected $last_reply = '';
 
@@ -356,8 +426,13 @@ class SMTP
      * @param string $authtype The auth type (PLAIN, LOGIN, NTLM, CRAM-MD5, XOAUTH2)
      * @param string $realm The auth realm for NTLM
      * @param string $workstation The auth workstation for NTLM
+<<<<<<< HEAD
      * @param null|OAuth $OAuth An optional OAuth instance (@see PHPMailerOAuth)
      * @return bool True if successfully authenticated.* @access public
+=======
+     * @access public
+     * @return boolean True if successfully authenticated.
+>>>>>>> origin/master
      */
     public function authenticate(
         $username,
@@ -674,11 +749,17 @@ class SMTP
     {
         $this->server_caps = array();
         $lines = explode("\n", $this->last_reply);
+<<<<<<< HEAD
 
         foreach ($lines as $n => $s) {
             //First 4 chars contain response code followed by - or space
             $s = trim(substr($s, 4));
             if (empty($s)) {
+=======
+        foreach ($lines as $n => $s) {
+            $s = trim(substr($s, 4));
+            if (!$s) {
+>>>>>>> origin/master
                 continue;
             }
             $fields = explode(' ', $s);
@@ -688,6 +769,7 @@ class SMTP
                     $fields = $fields[0];
                 } else {
                     $name = array_shift($fields);
+<<<<<<< HEAD
                     switch ($name) {
                         case 'SIZE':
                             $fields = ($fields ? $fields[0] : 0);
@@ -702,6 +784,13 @@ class SMTP
                     }
                 }
                 $this->server_caps[$name] = $fields;
+=======
+                    if ($name == 'SIZE') {
+                        $fields = ($fields) ? $fields[0] : 0;
+                    }
+                }
+                $this->server_caps[$name] = ($fields ? $fields : true);
+>>>>>>> origin/master
             }
         }
     }
@@ -751,6 +840,7 @@ class SMTP
      * Sets the TO argument to $toaddr.
      * Returns true if the recipient was accepted false if it was rejected.
      * Implements from rfc 821: RCPT <SP> TO:<forward-path> <CRLF>
+<<<<<<< HEAD
      * @param string $address The address the message is being sent to
      * @access public
      * @return boolean
@@ -760,6 +850,17 @@ class SMTP
         return $this->sendCommand(
             'RCPT TO',
             'RCPT TO:<' . $address . '>',
+=======
+     * @param string $toaddr The address the message is being sent to
+     * @access public
+     * @return boolean
+     */
+    public function recipient($toaddr)
+    {
+        return $this->sendCommand(
+            'RCPT TO',
+            'RCPT TO:<' . $toaddr . '>',
+>>>>>>> origin/master
             array(250, 251)
         );
     }
@@ -780,7 +881,11 @@ class SMTP
      * Send a command to an SMTP server and check its return code.
      * @param string $command The command name - not sent to the server
      * @param string $commandstring The actual command to send
+<<<<<<< HEAD
      * @param integer|array $expect One or more expected integer success codes
+=======
+     * @param integer|array $expect     One or more expected integer success codes
+>>>>>>> origin/master
      * @access protected
      * @return boolean True on success.
      */
@@ -788,11 +893,14 @@ class SMTP
     {
         if (!$this->connected()) {
             $this->setError("Called $command without being connected");
+<<<<<<< HEAD
             return false;
         }
         //Reject line breaks in all commands
         if (strpos($commandstring, "\n") !== false or strpos($commandstring, "\r") !== false) {
             $this->setError("Command '$command' contained line breaks");
+=======
+>>>>>>> origin/master
             return false;
         }
         $this->client_send($commandstring . self::CRLF);
@@ -998,9 +1106,16 @@ class SMTP
         }
         while (is_resource($this->smtp_conn) && !feof($this->smtp_conn)) {
             $str = @fgets($this->smtp_conn, 515);
+<<<<<<< HEAD
             $this->edebug("SMTP -> get_lines(): \$data is \"$data\"", self::DEBUG_LOWLEVEL);
             $this->edebug("SMTP -> get_lines(): \$str is  \"$str\"", self::DEBUG_LOWLEVEL);
             $data .= $str;
+=======
+            $this->edebug("SMTP -> get_lines(): \$data was \"$data\"", self::DEBUG_LOWLEVEL);
+            $this->edebug("SMTP -> get_lines(): \$str is \"$str\"", self::DEBUG_LOWLEVEL);
+            $data .= $str;
+            $this->edebug("SMTP -> get_lines(): \$data is \"$data\"", self::DEBUG_LOWLEVEL);
+>>>>>>> origin/master
             // If 4th character is a space, we are done reading, break the loop, micro-optimisation over strlen
             if ((isset($str[3]) and $str[3] == ' ')) {
                 break;
