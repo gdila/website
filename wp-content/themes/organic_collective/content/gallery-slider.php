@@ -2,7 +2,7 @@
 <div class="slideshow">
 	
 	<!-- BEGIN .flexslider -->
-	<div class="flexslider loading" data-speed="<?php echo get_theme_mod('transition_interval'); ?>" data-transition="<?php echo get_theme_mod('transition_style'); ?>">
+	<div class="flexslider loading" data-speed="<?php echo get_theme_mod('transition_interval', '8000'); ?>" data-transition="<?php echo get_theme_mod('transition_style', 'fade'); ?>">
 	
 		<div class="preloader"></div>
 	

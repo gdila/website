@@ -3,16 +3,16 @@
 add_action('init', 'team_register', 0);
 function team_register() {
 	$labels = array(
-		'name'				=> __('Team', 'organicthemes'),
-		'singular_name'		=> __('Team Member', 'organicthemes'),
-		'add_new'			=> __('Add New Member', 'organicthemes'),
-		'add_new_item'		=> __('Add New Member', 'organicthemes'),
-		'edit_item'			=> __('Edit Member', 'organicthemes'),
-		'new_item'			=> __('New Team Post Item', 'organicthemes'),
-		'view_item'			=> __('View Team Item', 'organicthemes'),
-		'search_items'		=> __('Search Team', 'organicthemes'),
-		'not_found'			=> __('Nothing found', 'organicthemes'),
-		'not_found_in_trash'=> __('Nothing found in Trash', 'organicthemes'),
+		'name'				=> esc_html__('Team', 'collective'),
+		'singular_name'		=> esc_html__('Team Member', 'collective'),
+		'add_new'			=> esc_html__('Add New Member', 'collective'),
+		'add_new_item'		=> esc_html__('Add New Member', 'collective'),
+		'edit_item'			=> esc_html__('Edit Member', 'collective'),
+		'new_item'			=> esc_html__('New Team Post Item', 'collective'),
+		'view_item'			=> esc_html__('View Team Item', 'collective'),
+		'search_items'		=> esc_html__('Search Team', 'collective'),
+		'not_found'			=> esc_html__('Nothing found', 'collective'),
+		'not_found_in_trash'=> esc_html__('Nothing found in Trash', 'collective'),
 		'parent_item_colon'	=> ''
 	);
  
@@ -35,16 +35,16 @@ function team_register() {
 	
 	// Initialize New Taxonomy Labels  
 	$labels = array(  
-		'name' 				=> __( 'Categories', 'organicthemes' ),  
-		'singular_name' 	=> __( 'Category', 'organicthemes' ),  
-		'search_items' 		=> __( 'Search Categories', 'organicthemes' ),  
-		'all_items' 		=> __( 'All Categories', 'organicthemes' ),  
-		'parent_item' 		=> __( 'Parent Category', 'organicthemes' ),  
-		'parent_item_colon' => __( 'Parent Category:', 'organicthemes' ),  
-		'edit_item' 		=> __( 'Edit Categories', 'organicthemes' ),  
-		'update_item' 		=> __( 'Update Category', 'organicthemes' ),  
-		'add_new_item' 		=> __( 'Add New Category', 'organicthemes' ),  
-		'new_item_name' 	=> __( 'New Category Name', 'organicthemes' ),  
+		'name' 				=> esc_html__( 'Categories', 'collective' ),  
+		'singular_name' 	=> esc_html__( 'Category', 'collective' ),  
+		'search_items' 		=> esc_html__( 'Search Categories', 'collective' ),  
+		'all_items' 		=> esc_html__( 'All Categories', 'collective' ),  
+		'parent_item' 		=> esc_html__( 'Parent Category', 'collective' ),  
+		'parent_item_colon' => esc_html__( 'Parent Category:', 'collective' ),  
+		'edit_item' 		=> esc_html__( 'Edit Categories', 'collective' ),  
+		'update_item' 		=> esc_html__( 'Update Category', 'collective' ),  
+		'add_new_item' 		=> esc_html__( 'Add New Category', 'collective' ),  
+		'new_item_name' 	=> esc_html__( 'New Category Name', 'collective' ),  
 	);  
 	// Custom taxonomy for team categories 
 	register_taxonomy('category-team', array('team'), array(  
@@ -171,57 +171,57 @@ function team_box() {
 <div id="team_info">
 
 <div class="team_field">
-<label for="team_title"><?php _e("Member Title", 'organicthemes'); ?></label>
+<label for="team_title"><?php esc_html_e("Member Title", 'collective'); ?></label>
 <input id="team_title" class="widefat" name="team_title" value="<?php echo $team_title; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_link"><?php _e("Personal Site", 'organicthemes'); ?></label>
+<label for="team_link"><?php esc_html_e("Personal Site", 'collective'); ?></label>
 <input id="team_link" class="widefat" name="team_link" value="<?php echo $team_link; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_email"><?php _e("Email Address", 'organicthemes'); ?></label>
+<label for="team_email"><?php esc_html_e("Email Address", 'collective'); ?></label>
 <input id="team_email" class="widefat" name="team_email" value="<?php echo $team_email; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_facebook"><?php _e("Facebook Page", 'organicthemes'); ?></label>
+<label for="team_facebook"><?php esc_html_e("Facebook Page", 'collective'); ?></label>
 <input id="team_facebook" class="widefat" name="team_facebook" value="<?php echo $team_facebook; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_twitter_name"><?php _e("Twitter Name", 'organicthemes'); ?></label>
+<label for="team_twitter_name"><?php esc_html_e("Twitter Name", 'collective'); ?></label>
 <input id="team_twitter_name" class="widefat" name="team_twitter_name" value="<?php echo $team_twitter_name; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_twitter_link"><?php _e("Twitter Profile URL", 'organicthemes'); ?></label>
+<label for="team_twitter_link"><?php esc_html_e("Twitter Profile URL", 'collective'); ?></label>
 <input id="team_twitter_link" class="widefat" name="team_twitter_link" value="<?php echo $team_twitter_link; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_twitter_id"><?php _e("Twitter Widget ID", 'organicthemes'); ?></label>
+<label for="team_twitter_id"><?php esc_html_e("Twitter Widget ID", 'collective'); ?></label>
 <input id="team_twitter_id" class="widefat" name="team_twitter_id" value="<?php echo $team_twitter_id; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_google"><?php _e("Google Plus Profile URL", 'organicthemes'); ?></label>
+<label for="team_google"><?php esc_html_e("Google Plus Profile URL", 'collective'); ?></label>
 <input id="team_google" class="widefat" name="team_google" value="<?php echo $team_google; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_linkedin"><?php _e("LinkedIn Profile URL", 'organicthemes'); ?></label>
+<label for="team_linkedin"><?php esc_html_e("LinkedIn Profile URL", 'collective'); ?></label>
 <input id="team_linkedin" class="widefat" name="team_linkedin" value="<?php echo $team_linkedin; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_dribbble"><?php _e("Dribbble Profile URL", 'organicthemes'); ?></label>
+<label for="team_dribbble"><?php esc_html_e("Dribbble Profile URL", 'collective'); ?></label>
 <input id="team_dribbble" class="widefat" name="team_dribbble" value="<?php echo $team_dribbble; ?>" type="text">
 </div>
 
 <div class="team_field">
-<label for="team_github"><?php _e("Github Profile URL", 'organicthemes'); ?></label>
+<label for="team_github"><?php esc_html_e("Github Profile URL", 'collective'); ?></label>
 <input id="team_github" class="widefat" name="team_github" value="<?php echo $team_github; ?>" type="text">
 </div>
 

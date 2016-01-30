@@ -96,6 +96,22 @@
 <!-- END #wrap -->
 </div>
 
+<?php if ( is_user_logged_in() ) :
+	global $current_user;
+  get_currentuserinfo();
+?>
+<script>
+	var currentUser = {
+		'firstName': '<?php echo $current_user->user_firstname; ?>',
+		'lastName' : '<?php echo $current_user->user_lastname; ?>',
+		'email': '<?php echo $current_user->user_email; ?>',
+		'id': '<?php echo $current_user->ID; ?>',
+		'phone': '<?php echo get_user_meta($current_user->ID, "phone", true); ?>'
+	};
+</script>
+<?php endif; ?>
+
+
 <?php wp_footer(); ?>
 
 <div id="fb-root"></div>

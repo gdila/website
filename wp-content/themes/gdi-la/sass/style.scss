@@ -34,12 +34,18 @@ body,
 
 .postarea,
 .article {
+	margin-bottom: 2.25em;
 	overflow: visible;
 	&:after {
 		clear: both;
 		content: '';
 		display: table;
 	}
+}
+
+p {
+	margin: 0 0 1em 0;
+	padding: 0;
 }
 
 /* =========================================== */
@@ -433,3 +439,49 @@ dl {
 	}
 }
 
+/* =========================================== */
+/* Gravity Forms Customizations
+/* =========================================== */
+
+html body {
+	.gform_wrapper {
+		max-width: 100%;
+	}
+	.gform_wrapper .top_label .gfield_label {
+		margin: 0;
+	}
+	.gform_wrapper ul li.gfield {
+		margin: 0.5em 0;
+	}
+	.gform_wrapper label.gfield_label+div.ginput_container {
+		margin: 0;
+	}
+	.container form span {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+}
+
+.gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=email], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=number], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=password], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=tel], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=text], .gform_wrapper .gfield_error .ginput_complex .ginput_right input[type=url], .gform_wrapper .ginput_complex input[type=email], .gform_wrapper .ginput_complex input[type=number], .gform_wrapper .ginput_complex input[type=password], .gform_wrapper .ginput_complex input[type=tel], .gform_wrapper .ginput_complex input[type=text], .gform_wrapper .ginput_complex input[type=url] {
+	@include box-sizing(border-box);
+}
+
+/* =========================================== */
+/* Wired Impact Volunteer Customizations
+/* =========================================== */
+
+#wivm-sign-up-form input[type='submit'] {
+	background: $color-pink;
+	border: 0 none;
+	@include border-radius(6px);
+	color: white;
+	cursor: pointer;
+	float: none;
+	font-size: 1.6rem;
+	height: auto;
+	padding: 0.5rem 1rem;
+	@include transition(background 300ms);
+	&:hover {
+		background: $color-grey;
+	}
+}

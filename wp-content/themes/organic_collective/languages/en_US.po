@@ -1,0 +1,725 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Collective\n"
+"POT-Creation-Date: 2016-01-07 19:07-0500\n"
+"PO-Revision-Date: 2016-01-07 19:08-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:14
+msgid "Not Found, Error 404"
+msgstr ""
+
+#: 404.php:28 404.php:48
+msgid "The page you are looking for no longer exists."
+msgstr ""
+
+#: comments.php:17
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:33
+#, php-format
+msgid "One Comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:61
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:62
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: content/content-author.php:14
+msgid "Website:"
+msgstr ""
+
+#: content/content-author.php:15
+msgid "Link to author page"
+msgstr ""
+
+#: content/content-author.php:20
+msgid "Profile:"
+msgstr ""
+
+#: content/content-author.php:28
+#, php-format
+msgid "Posts by %1$s:"
+msgstr ""
+
+#: content/content-author.php:41
+msgid "No posts by this author."
+msgstr ""
+
+#: content/featured-slider.php:32 content/featured-slider.php:34
+#: content/home-news.php:15 loop-archive.php:19 loop-blog.php:24
+#: loop-portfolio.php:24 loop-team.php:34
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content/home-footer.php:23
+msgid "Continue Reading"
+msgstr ""
+
+#: content/home-news.php:30 content/home-news.php:60 loop-archive.php:10
+#: loop-blog.php:15 loop-post.php:5
+msgid "Posted on"
+msgstr ""
+
+#: content/home-news.php:30 content/home-news.php:60 loop-archive.php:10
+#: loop-blog.php:15 loop-post.php:5
+msgid "F j, Y"
+msgstr ""
+
+#: content/home-news.php:30 content/home-news.php:60 footer.php:52
+#: loop-archive.php:10 loop-blog.php:15 loop-post.php:5
+msgid "by"
+msgstr ""
+
+#: content/home-news.php:88 loop-blog.php:55
+msgid "No Posts Found"
+msgstr ""
+
+#: content/home-news.php:89 loop-blog.php:56
+msgid ""
+"We're sorry, but no posts have been found. Create a post to be added to this "
+"section, and configure your theme options."
+msgstr ""
+
+#: content/home-page.php:20 functions.php:330 loop-blog.php:31 loop-page.php:6
+msgid "Read More"
+msgstr ""
+
+#: content/home-setup.php:15
+msgid "Welcome To Collective"
+msgstr ""
+
+#: content/home-setup.php:16
+#, php-format
+msgid ""
+"To get started set and save the options for the theme within the <a href="
+"\"%1$s\">Customizer</a>."
+msgstr ""
+
+#: footer.php:51
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:51
+msgid "Y"
+msgstr ""
+
+#: footer.php:51
+msgid "All Rights Reserved"
+msgstr ""
+
+#: footer.php:52
+msgid "Collective Theme"
+msgstr ""
+
+#: footer.php:52
+msgid "Organic Themes"
+msgstr ""
+
+#: footer.php:52
+msgid "WordPress Hosting"
+msgstr ""
+
+#: footer.php:52
+msgid "RSS Feed"
+msgstr ""
+
+#: functions.php:26
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:27
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:182
+msgid "Page Sidebar"
+msgstr ""
+
+#: functions.php:190
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:198
+msgid "Post Sidebar"
+msgstr ""
+
+#: functions.php:206
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions.php:214
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions.php:269
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:269 functions.php:309
+msgid "Edit"
+msgstr ""
+
+#: functions.php:287
+#, php-format
+msgid "%1$s <br/> %2$s <br/>"
+msgstr ""
+
+#: functions.php:293
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:302
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:307
+msgid "Reply"
+msgstr ""
+
+#: functions.php:354
+msgid "&laquo;"
+msgstr ""
+
+#: functions.php:355
+msgid "&raquo;"
+msgstr ""
+
+#: functions.php:396
+msgid "Featured Video Embed Code"
+msgstr ""
+
+#: functions.php:485
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: includes/customizer.php:21 includes/customizer.php:46
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: includes/customizer.php:111 includes/customizer.php:490
+msgid "2 Seconds"
+msgstr ""
+
+#: includes/customizer.php:112 includes/customizer.php:491
+msgid "4 Seconds"
+msgstr ""
+
+#: includes/customizer.php:113 includes/customizer.php:492
+msgid "6 Seconds"
+msgstr ""
+
+#: includes/customizer.php:114 includes/customizer.php:493
+msgid "8 Seconds"
+msgstr ""
+
+#: includes/customizer.php:115 includes/customizer.php:494
+msgid "10 Seconds"
+msgstr ""
+
+#: includes/customizer.php:116 includes/customizer.php:495
+msgid "12 Seconds"
+msgstr ""
+
+#: includes/customizer.php:117 includes/customizer.php:496
+msgid "20 Seconds"
+msgstr ""
+
+#: includes/customizer.php:118 includes/customizer.php:497
+msgid "30 Seconds"
+msgstr ""
+
+#: includes/customizer.php:119 includes/customizer.php:498
+msgid "1 Minute"
+msgstr ""
+
+#: includes/customizer.php:120 includes/customizer.php:499
+msgid "Hold Frame"
+msgstr ""
+
+#: includes/customizer.php:132 includes/customizer.php:514
+msgid "Fade"
+msgstr ""
+
+#: includes/customizer.php:133 includes/customizer.php:515
+msgid "Slide"
+msgstr ""
+
+#: includes/customizer.php:145 includes/customizer.php:447
+msgid "One Column"
+msgstr ""
+
+#: includes/customizer.php:146 includes/customizer.php:448
+msgid "Two Columns"
+msgstr ""
+
+#: includes/customizer.php:147 includes/customizer.php:449
+msgid "Three Columns"
+msgstr ""
+
+#: includes/customizer.php:181
+msgid "Site Identity"
+msgstr ""
+
+#: includes/customizer.php:182
+msgid "Logo images have a max-height of 140px."
+msgstr ""
+
+#: includes/customizer.php:192
+msgid "Logo"
+msgstr ""
+
+#: includes/customizer.php:270
+msgid "Theme Options"
+msgstr ""
+
+#: includes/customizer.php:271
+msgid ""
+"This panel allows you to customize specific areas of the Collective Theme."
+msgstr ""
+
+#: includes/customizer.php:279
+msgid "Home Page"
+msgstr ""
+
+#: includes/customizer.php:290
+msgid "Featured Page Top"
+msgstr ""
+
+#: includes/customizer.php:303
+msgid "Team Section Title"
+msgstr ""
+
+#: includes/customizer.php:316
+msgid "Featured Team Category"
+msgstr ""
+
+#: includes/customizer.php:332
+msgid "Team Background Pattern"
+msgstr ""
+
+#: includes/customizer.php:344
+msgid "Featured News Category"
+msgstr ""
+
+#: includes/customizer.php:357
+msgid "Featured News Posts Displayed"
+msgstr ""
+
+#: includes/customizer.php:370
+msgid "News Background Pattern"
+msgstr ""
+
+#: includes/customizer.php:382
+msgid "Featured Page Bottom"
+msgstr ""
+
+#: includes/customizer.php:406
+msgid "Page Templates"
+msgstr ""
+
+#: includes/customizer.php:417
+msgid "Blog Template Category"
+msgstr ""
+
+#: includes/customizer.php:430
+msgid "Blog Posts Displayed"
+msgstr ""
+
+#: includes/customizer.php:444
+msgid "Portfolio Column Layout"
+msgstr ""
+
+#: includes/customizer.php:460
+msgid "Portfolio Template Category"
+msgstr ""
+
+#: includes/customizer.php:473
+msgid "Show Portfolio Title & Excerpt?"
+msgstr ""
+
+#: includes/customizer.php:487
+msgid "Transition Interval"
+msgstr ""
+
+#: includes/customizer.php:511
+msgid "Transition Style"
+msgstr ""
+
+#: includes/customizer.php:526
+msgid "Featured Slideshow Category"
+msgstr ""
+
+#: includes/customizer.php:539
+msgid "Featured Slideshow Posts Displayed"
+msgstr ""
+
+#: includes/customizer.php:551
+msgid "Misc Settings"
+msgstr ""
+
+#: includes/customizer.php:562
+msgid "Display Site Title?"
+msgstr ""
+
+#: includes/customizer.php:575
+msgid "Show Team Large Featured Image?"
+msgstr ""
+
+#: includes/customizer.php:588
+msgid "Show Post Featured Images?"
+msgstr ""
+
+#: includes/customizer.php:601
+msgid "Show Share Buttons on Single Posts?"
+msgstr ""
+
+#: includes/customizer.php:614
+msgid "Twitter User"
+msgstr ""
+
+#: includes/post-type-team.php:6
+msgid "Team"
+msgstr ""
+
+#: includes/post-type-team.php:7
+msgid "Team Member"
+msgstr ""
+
+#: includes/post-type-team.php:8 includes/post-type-team.php:9
+msgid "Add New Member"
+msgstr ""
+
+#: includes/post-type-team.php:10
+msgid "Edit Member"
+msgstr ""
+
+#: includes/post-type-team.php:11
+msgid "New Team Post Item"
+msgstr ""
+
+#: includes/post-type-team.php:12
+msgid "View Team Item"
+msgstr ""
+
+#: includes/post-type-team.php:13
+msgid "Search Team"
+msgstr ""
+
+#: includes/post-type-team.php:14
+msgid "Nothing found"
+msgstr ""
+
+#: includes/post-type-team.php:15
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: includes/post-type-team.php:38
+msgid "Categories"
+msgstr ""
+
+#: includes/post-type-team.php:39
+msgid "Category"
+msgstr ""
+
+#: includes/post-type-team.php:40
+msgid "Search Categories"
+msgstr ""
+
+#: includes/post-type-team.php:41
+msgid "All Categories"
+msgstr ""
+
+#: includes/post-type-team.php:42
+msgid "Parent Category"
+msgstr ""
+
+#: includes/post-type-team.php:43
+msgid "Parent Category:"
+msgstr ""
+
+#: includes/post-type-team.php:44
+msgid "Edit Categories"
+msgstr ""
+
+#: includes/post-type-team.php:45
+msgid "Update Category"
+msgstr ""
+
+#: includes/post-type-team.php:46
+msgid "Add New Category"
+msgstr ""
+
+#: includes/post-type-team.php:47
+msgid "New Category Name"
+msgstr ""
+
+#: includes/post-type-team.php:174
+msgid "Member Title"
+msgstr ""
+
+#: includes/post-type-team.php:179
+msgid "Personal Site"
+msgstr ""
+
+#: includes/post-type-team.php:184
+msgid "Email Address"
+msgstr ""
+
+#: includes/post-type-team.php:189
+msgid "Facebook Page"
+msgstr ""
+
+#: includes/post-type-team.php:194
+msgid "Twitter Name"
+msgstr ""
+
+#: includes/post-type-team.php:199
+msgid "Twitter Profile URL"
+msgstr ""
+
+#: includes/post-type-team.php:204
+msgid "Twitter Widget ID"
+msgstr ""
+
+#: includes/post-type-team.php:209
+msgid "Google Plus Profile URL"
+msgstr ""
+
+#: includes/post-type-team.php:214
+msgid "LinkedIn Profile URL"
+msgstr ""
+
+#: includes/post-type-team.php:219
+msgid "Dribbble Profile URL"
+msgstr ""
+
+#: includes/post-type-team.php:224
+msgid "Github Profile URL"
+msgstr ""
+
+#: loop-archive.php:44 loop-page.php:28 loop-portfolio.php:50 loop-post.php:70
+#: single-team.php:134
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: loop-page.php:12 loop-post.php:19
+msgid "Pages:"
+msgstr ""
+
+#: loop-page.php:17 loop-post.php:24
+msgid "Next"
+msgstr ""
+
+#: loop-page.php:18 loop-post.php:25
+msgid "Previous"
+msgstr ""
+
+#: loop-page.php:24
+msgid "(Edit)"
+msgstr ""
+
+#: loop-post.php:4
+msgid "Leave a Comment"
+msgstr ""
+
+#: loop-post.php:4
+msgid "1 Comment"
+msgstr ""
+
+#: loop-post.php:41
+msgid "Tweet"
+msgstr ""
+
+#: loop-post.php:52
+msgid "Category:"
+msgstr ""
+
+#: loop-post.php:52
+msgid ", "
+msgstr ""
+
+#: loop-post.php:52
+msgid "Tags:"
+msgstr ""
+
+#: loop-team.php:59 single-team.php:75
+msgid "@"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgid "Go"
+msgstr ""
+
+#: single-team.php:63
+msgid "My Website"
+msgstr ""
+
+#: single-team.php:67
+msgid "Email Me"
+msgstr ""
+
+#: single-team.php:71
+msgid "Facebook"
+msgstr ""
+
+#: single-team.php:79
+msgid "Google+"
+msgstr ""
+
+#: single-team.php:83
+msgid "LinkedIn"
+msgstr ""
+
+#: single-team.php:87
+msgid "Dribbble"
+msgstr ""
+
+#: single-team.php:91
+msgid "Github"
+msgstr ""
+
+#: template-archive.php:39
+msgid "By Page:"
+msgstr ""
+
+#: template-archive.php:44
+msgid "By Post:"
+msgstr ""
+
+#: template-archive.php:49
+msgid "By Month:"
+msgstr ""
+
+#: template-archive.php:52
+msgid "By Category:"
+msgstr ""
+
+#: updater/theme-updater.php:28
+msgid "Theme License"
+msgstr ""
+
+#: updater/theme-updater.php:29
+msgid "Enter your theme license key."
+msgstr ""
+
+#: updater/theme-updater.php:30
+msgid "License Key"
+msgstr ""
+
+#: updater/theme-updater.php:31
+msgid "License Action"
+msgstr ""
+
+#: updater/theme-updater.php:32
+msgid "Deactivate License"
+msgstr ""
+
+#: updater/theme-updater.php:33
+msgid "Activate License"
+msgstr ""
+
+#: updater/theme-updater.php:34 updater/theme-updater.php:46
+msgid "License status is unknown."
+msgstr ""
+
+#: updater/theme-updater.php:35
+msgid "Renew?"
+msgstr ""
+
+#: updater/theme-updater.php:36
+msgid "unlimited"
+msgstr ""
+
+#: updater/theme-updater.php:37
+msgid "License key is active."
+msgstr ""
+
+#: updater/theme-updater.php:38
+#, php-format
+msgid "Expires %s."
+msgstr ""
+
+#: updater/theme-updater.php:39
+#, php-format
+msgid "You have %1$s / %2$s sites activated."
+msgstr ""
+
+#: updater/theme-updater.php:40
+#, php-format
+msgid "License key expired %s."
+msgstr ""
+
+#: updater/theme-updater.php:41
+msgid "License key has expired."
+msgstr ""
+
+#: updater/theme-updater.php:42
+msgid "License keys do not match."
+msgstr ""
+
+#: updater/theme-updater.php:43
+msgid "License is inactive."
+msgstr ""
+
+#: updater/theme-updater.php:44
+msgid "License key is disabled."
+msgstr ""
+
+#: updater/theme-updater.php:45
+msgid "Site is inactive."
+msgstr ""
+
+#: updater/theme-updater.php:47
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: updater/theme-updater.php:48
+#, php-format
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
+"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
+"a>."
+msgstr ""

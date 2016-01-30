@@ -9,7 +9,7 @@ if ( ! function_exists( 'collective_setup' ) ) :
 function collective_setup() {
 
 	// Make theme available for translation
-	load_theme_textdomain( 'organicthemes', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'collective', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -23,8 +23,8 @@ function collective_setup() {
 
 	// Create Menus
 	register_nav_menus( array(
-		'header-menu' => __( 'Header Menu', 'organicthemes' ),
-		'social-menu' => __( 'Social Menu', 'organicthemes' ),
+		'header-menu' => esc_html__( 'Header Menu', 'collective' ),
+		'social-menu' => esc_html__( 'Social Menu', 'collective' ),
 	));
 	
 	// Custom Header
@@ -48,6 +48,15 @@ function collective_setup() {
 }
 endif; // collective_setup
 add_action( 'after_setup_theme', 'collective_setup' );
+
+/*-----------------------------------------------------------------------------------------------------//
+	Theme Updater
+-------------------------------------------------------------------------------------------------------*/
+
+function collective_theme_updater() {
+	require( get_template_directory() . '/updater/theme-updater.php' );
+}
+add_action( 'after_setup_theme', 'collective_theme_updater' );
 
 /*-----------------------------------------------------------------------------------------------------//	
 	Category ID to Name		       	     	 
@@ -170,7 +179,7 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 
 function organic_widgets_init() {
 	register_sidebar(array(
-		'name'=> __( "Page Sidebar", 'organicthemes' ),
+		'name'=> esc_html__( "Page Sidebar", 'collective' ),
 		'id' => 'page-sidebar',
 		'before_widget'=>'<div id="%1$s" class="widget %2$s">',
 		'after_widget'=>'</div>',
@@ -178,7 +187,7 @@ function organic_widgets_init() {
 		'after_title'=>'</h6>'
 	));
 	register_sidebar(array(
-		'name'=> __( "Blog Sidebar", 'organicthemes' ),
+		'name'=> esc_html__( "Blog Sidebar", 'collective' ),
 		'id' => 'blog-sidebar',
 		'before_widget'=>'<div id="%1$s" class="widget %2$s">',
 		'after_widget'=>'</div>',
@@ -186,7 +195,7 @@ function organic_widgets_init() {
 		'after_title'=>'</h6>'
 	));
 	register_sidebar(array(
-		'name'=> __( "Post Sidebar", 'organicthemes' ),
+		'name'=> esc_html__( "Post Sidebar", 'collective' ),
 		'id' => 'post-sidebar',
 		'before_widget'=>'<div id="%1$s" class="widget %2$s">',
 		'after_widget'=>'</div>',
@@ -194,7 +203,7 @@ function organic_widgets_init() {
 		'after_title'=>'</h6>'
 	));
 	register_sidebar(array(
-		'name'=> __( "Left Sidebar", 'organicthemes' ),
+		'name'=> esc_html__( "Left Sidebar", 'collective' ),
 		'id' => 'left-sidebar',
 		'before_widget'=>'<div id="%1$s" class="widget %2$s">',
 		'after_widget'=>'</div>',
@@ -202,7 +211,7 @@ function organic_widgets_init() {
 		'after_title'=>'</h6>'
 	));
 	register_sidebar(array(
-		'name'=> __( "Footer Widgets", 'organicthemes' ),
+		'name'=> esc_html__( "Footer Widgets", 'collective' ),
 		'id' => 'footer',
 		'before_widget'=>'<div id="%1$s" class="widget %2$s"><div class="footer-widget">',
 		'after_widget'=>'</div></div>',
@@ -245,8 +254,8 @@ function collective_content_width() {
 }
 add_action( 'template_redirect', 'collective_content_width' );
 	
-/*-----------------------------------------------------------------------------------------------------//	
-	Comments Function		       	     	 
+/*-----------------------------------------------------------------------------------------------------//
+	Comments Function
 -------------------------------------------------------------------------------------------------------*/
 
 if ( ! function_exists( 'collective_comment' ) ) :
@@ -257,13 +266,13 @@ function collective_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'organicthemes' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'organicthemes' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php esc_html_e( 'Pingback:', 'collective' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( esc_html__( 'Edit', 'collective' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 		break;
 		default :
 	?>
 	<li <?php comment_class(); ?> id="<?php echo esc_attr( 'li-comment-' . get_comment_ID() ); ?>">
-	
+
 		<article id="<?php echo esc_attr( 'comment-' . get_comment_ID() ); ?>" class="comment">
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
@@ -275,13 +284,13 @@ function collective_comment( $comment, $args, $depth ) {
 						echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s <br/> %2$s <br/>', 'organicthemes' ),
+						printf( __( '%1$s <br/> %2$s <br/>', 'collective' ),
 							sprintf( '<span class="fn">%s</span>', wp_kses_post( get_comment_author_link() ) ),
 							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s', 'organicthemes' ), get_comment_date(), get_comment_time() )
+								sprintf( esc_html__( '%1$s', 'collective' ), get_comment_date(), get_comment_time() )
 							)
 						);
 					?>
@@ -290,14 +299,14 @@ function collective_comment( $comment, $args, $depth ) {
 
 			<div class="comment-content">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'organicthemes' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'collective' ); ?></em>
 					<br />
 				<?php endif; ?>
 				<?php comment_text(); ?>
 				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'organicthemes' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply', 'collective' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 				</div><!-- .reply -->
-				<?php edit_comment_link( __( 'Edit', 'organicthemes' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_comment_link( esc_html__( 'Edit', 'collective' ), '<span class="edit-link">', '</span>' ); ?>
 			</div>
 
 		</article><!-- #comment-## -->
@@ -318,7 +327,7 @@ function collective_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'collective_excerpt_length', 999 );
 
 function collective_excerpt_more( $more ) {
-	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. __('Read More', 'organicthemes') .'</a>';
+	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. esc_html__('Read More', 'collective') .'</a>';
 }
 add_filter('excerpt_more', 'collective_excerpt_more');
 
@@ -342,8 +351,8 @@ function collective_get_pagination_links() {
 		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 		'format' => '?paged=%#%',
 		'current' => max( 1, get_query_var('paged') ),
-		'prev_text' => __('&laquo;', 'collective'),
-		'next_text' => __('&raquo;', 'collective'),
+		'prev_text' => esc_html__('&laquo;', 'collective'),
+		'next_text' => esc_html__('&raquo;', 'collective'),
 		'total' => $wp_query->max_num_pages
 	) );
 }
@@ -384,7 +393,7 @@ add_action("admin_init", "admin_init_featurevid");
 add_action('save_post', 'save_featurevid');
 
 function admin_init_featurevid(){
-	add_meta_box("featurevid-meta", __("Featured Video Embed Code", 'organicthemes'), "meta_options_featurevid", "post", "normal", "high");
+	add_meta_box("featurevid-meta", esc_html__("Featured Video Embed Code", 'collective'), "meta_options_featurevid", "post", "normal", "high");
 }
 
 function meta_options_featurevid(){
@@ -473,7 +482,7 @@ function collective_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'organicthemes' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'collective' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -484,9 +493,7 @@ add_filter( 'wp_title', 'collective_wp_title', 10, 2 );
 -------------------------------------------------------------------------------------------------------*/
 
 require_once( get_template_directory() . '/includes/jetpack.php' );
-require_once( get_template_directory() . '/includes/theme-updater.php' );
 require_once( get_template_directory() . '/includes/customizer.php' );
-require_once( get_template_directory() . '/includes/theme-updater.php' );
 require_once( get_template_directory() . '/includes/typefaces.php' );
 require_once( get_template_directory() . '/includes/post-type-team.php'); 	// Get Custom Post Type : Team
 include_once( get_template_directory() . '/organic-shortcodes/organic-shortcodes.php' );

@@ -10,7 +10,7 @@ Template Name: Three Column
 */
 get_header(); ?>
 
-<?php $thumb = ( '' != get_the_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
+<?php $thumb = ( has_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
 
 <!-- BEGIN .post class -->
 <div <?php post_class(); ?> id="page-<?php the_ID(); ?>">

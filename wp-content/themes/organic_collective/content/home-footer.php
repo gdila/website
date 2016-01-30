@@ -1,4 +1,4 @@
-<?php $featured_page = new WP_Query('page_id='.get_theme_mod('page_footer')); while($featured_page->have_posts()) : $featured_page->the_post(); ?>
+<?php $featured_page = new WP_Query('page_id='.get_theme_mod('page_footer', '0')); while($featured_page->have_posts()) : $featured_page->the_post(); ?>
 <?php global $more; $more = 0; ?>
 
 <!-- BEGIN .row -->
@@ -20,7 +20,7 @@
 					<div class="padding">
 					
 						<h2 class="headline text-center"><?php the_title(); ?></h2>
-						<?php the_content(__("Continue Reading", 'organicthemes')); ?>
+						<?php the_content(__("Continue Reading", 'collective')); ?>
 					
 					<!-- END .padding -->
 					</div>

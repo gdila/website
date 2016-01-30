@@ -10,7 +10,7 @@ Template Name: Portfolio
 */
 get_header(); ?>
 
-<?php $thumb = ( '' != get_the_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
+<?php $thumb = ( has_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
 
 <!-- BEGIN .post class -->
 <div <?php post_class('portfolio-page'); ?> id="page-<?php the_ID(); ?>">
@@ -25,7 +25,7 @@ get_header(); ?>
 	<?php } ?>
 	
 	<?php
-		$portfoliocat = get_theme_mod('category_portfolio');
+		$portfoliocat = get_theme_mod('category_portfolio', '0');
 		if ( function_exists('icl_object_id')) { 
 			$multi_lingual_ID = icl_object_id($portfoliocat, 'category', false);
 			$terms = get_terms('category', 'child_of='.$multi_lingual_ID.'&hide_empty=0' );

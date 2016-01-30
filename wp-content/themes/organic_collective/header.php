@@ -20,10 +20,7 @@
 
 <meta charset="<?php bloginfo('charset'); ?>">
 
-<?php if(get_theme_mod('enable_responsive') == '1') { ?>
-<!-- Mobile View -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php } ?>
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="Shortcut Icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon">
@@ -61,59 +58,28 @@
 					<!-- BEGIN #logo -->
 					<div id="logo">
 					
-					<?php if (is_home() || is_front_page() ) { ?>
+					<?php if ( get_theme_mod( 'collective_logo', get_template_directory_uri() . '/images/logo.png' ) ) { ?>
 					
-						<?php if ( get_theme_mod( 'collective_logo' ) ) { ?>
+						<h1 id="logo">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<img src="<?php echo esc_url( get_theme_mod( 'collective_logo', get_template_directory_uri() . '/images/logo.png' ) ); ?>" alt="" />
+								<span class="logo-text"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></span>
+							</a>
+						</h1>
 						
-							<h1 id="logo">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-									<img src="<?php echo esc_url( get_theme_mod( 'collective_logo' ) ); ?>" alt="" />
-									<span class="logo-text"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></span>
-								</a>
-							</h1>
-							
-							<?php if ( get_theme_mod('display_site_title') == '1' ) { ?>
-							
-							<div id="masthead">
-								<h1 class="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></span></h1>
-							</div>
-							
-							<?php } ?>
-							
-						<?php } else { ?>
+						<?php if ( get_theme_mod('display_site_title', '1') == '1' ) { ?>
 						
-							<div id="masthead">
-								<h1 class="site-title no-logo"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></span></h1>
-							</div>
-							
+						<div id="masthead">
+							<h1 class="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></span></h1>
+						</div>
+						
 						<?php } ?>
 						
 					<?php } else { ?>
 					
-						<?php if ( get_theme_mod( 'collective_logo' ) ) { ?>
-						
-							<h4 id="logo">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-									<img src="<?php echo esc_url( get_theme_mod( 'collective_logo' ) ); ?>" alt="" />
-									<span class="logo-text"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></span>
-								</a>
-							</h4>
-							
-							<?php if ( get_theme_mod('display_site_title') == '1' ) { ?>
-							
-							<div id="masthead">
-								<h4 class="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></span></h4>
-							</div>
-							
-							<?php } ?>
-							
-						<?php } else { ?>
-						
-							<div id="masthead">
-								<h4 class="site-title no-logo"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></span></h4>
-							</div>
-							
-						<?php } ?>
+						<div id="masthead">
+							<h1 class="site-title no-logo"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( get_bloginfo( 'name' ) ); ?></a></span></h1>
+						</div>
 						
 					<?php } ?>
 					

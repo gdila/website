@@ -1,24 +1,12 @@
 <style type="text/css" media="screen">
 	<?php
-		$background_stretch = get_theme_mod('background_stretch');
-		$link_color = get_theme_mod('link_color');
-		$heading_link_color = get_theme_mod('heading_link_color');
-		$link_hover_color = get_theme_mod('link_hover_color');
-		$heading_link_hover_color = get_theme_mod('heading_link_hover_color');
-		$highlight_color = get_theme_mod('highlight_color');
-		$page_footer_bg = get_theme_mod('page_footer_bg');
+		$link_color = get_theme_mod('link_color', '#009999');
+		$heading_link_color = get_theme_mod('heading_link_color', '#333333');
+		$link_hover_color = get_theme_mod('link_hover_color', '#006666');
+		$heading_link_hover_color = get_theme_mod('heading_link_hover_color', '#009999');
+		$highlight_color = get_theme_mod('highlight_color', '#33cccc');
+		$page_footer_bg = get_theme_mod('page_footer_bg', '#33cccc');
 	?>
-	
-	body {
-		<?php
-			if ($background_stretch == '1') {
-				echo '-webkit-background-size: cover;';
-				echo '-moz-background-size: cover;';
-				echo '-o-background-size: cover;';
-				echo 'background-size: cover;';
-			};
-		?>
-	}
 	
 	.container a, .container a:link, .container a:visited,
 	.footer-widgets a, .footer-widgets a:link, .footer-widgets a:visited,

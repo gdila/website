@@ -11,7 +11,7 @@ get_header(); ?>
 <!-- BEGIN .hentry -->
 <div class="hentry">
 
-	<h1 class="headline page-headline text-center"><?php _e("Not Found, Error 404", 'organicthemes'); ?></h1>
+	<h1 class="headline page-headline text-center"><?php esc_html_e("Not Found, Error 404", 'collective'); ?></h1>
 		
 	<!-- BEGIN .row -->
 	<div class="row">
@@ -25,7 +25,7 @@ get_header(); ?>
 			<div class="eleven columns">
 		
 			<div class="postarea">
-				<p><?php _e("The page you are looking for no longer exists.", 'organicthemes'); ?></p>
+				<p><?php esc_html_e("The page you are looking for no longer exists.", 'collective'); ?></p>
 			</div>
 			
 			<!-- END .eleven columns -->
@@ -45,7 +45,7 @@ get_header(); ?>
 			<div class="sixteen columns">
 		
 			<div class="postarea full">
-				<p><?php _e("The page you are looking for no longer exists.", 'organicthemes'); ?></p>
+				<p><?php esc_html_e("The page you are looking for no longer exists.", 'collective'); ?></p>
 			</div>
 			
 			<!-- END .sixteen columns -->

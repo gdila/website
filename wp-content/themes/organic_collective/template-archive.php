@@ -10,12 +10,12 @@ Template Name: Archives
 */
 get_header(); ?>
 
-<?php $thumb = ( '' != get_the_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
+<?php $thumb = ( has_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
 
 <!-- BEGIN .post class -->
 <div <?php post_class(); ?> id="page-<?php the_ID(); ?>">
 
-	<?php if ( '' != get_the_post_thumbnail()) { ?>
+	<?php if ( has_post_thumbnail()) { ?>
 		<div class="feature-img page-banner" <?php if ( ! empty( $thumb ) ) { ?> style="background-image: url(<?php echo $thumb[0]; ?>);" <?php } ?>>
 			<h1 class="headline img-headline"><?php the_title(); ?></h1>
 			<?php the_post_thumbnail( 'collective-featured-large' ); ?>
@@ -36,20 +36,20 @@ get_header(); ?>
 			<div class="postarea full">
 				
 				<div class="archive-column">
-					<h6><?php _e("By Page:", 'organicthemes'); ?></h6>
+					<h6><?php esc_html_e("By Page:", 'collective'); ?></h6>
 					<ul><?php wp_list_pages('title_li='); ?></ul>
 				</div>
 				
 				<div class="archive-column">
-					<h6><?php _e("By Post:", 'organicthemes'); ?></h6>
+					<h6><?php esc_html_e("By Post:", 'collective'); ?></h6>
 					<ul><?php wp_get_archives('type=postbypost&limit=100'); ?></ul>
 				</div>
 				
 				<div class="archive-column last">
-					<h6><?php _e("By Month:", 'organicthemes'); ?></h6>
+					<h6><?php esc_html_e("By Month:", 'collective'); ?></h6>
 					<ul><?php wp_get_archives('type=monthly'); ?></ul>
 					
-					<h6><?php _e("By Category:", 'organicthemes'); ?></h6>
+					<h6><?php esc_html_e("By Category:", 'collective'); ?></h6>
 					<ul><?php wp_list_categories('sort_column=name&title_li='); ?></ul>
 				</div>
 			

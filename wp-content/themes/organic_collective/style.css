@@ -7,7 +7,7 @@
 	Author URI: http://www.organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 2.0.5
+	Version: 2.1.1
 	Tags: light, black, white, one-column, two-columns, three-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post
 	
 	The CSS, XHTML and Design are released under the GPL:
@@ -45,6 +45,7 @@
 	25. CSS3 Styles
 	26. WooCommerce
 	27. Grid
+	28. WordPress Core
 	  
 *******************************************************************************************************************/
 
@@ -418,7 +419,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 1.4em;
 	font-weight: 300;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 	line-height: 60px;
 	padding: 0px 18px 0px 0px;
 	margin: 0px;
@@ -911,11 +912,13 @@ html[xmlns] .slides {
 	}
 .page-section .featured-page {
 	top: 50%;
+	left: 50%;
+	width: 100%;
 	position: absolute;
 	margin: 0px auto 0px;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	-ms-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
 	}
 .page-section .featured-page .information br {
 	display: none;
@@ -1186,11 +1189,6 @@ html[xmlns] .slides {
 	}
 .archive-column.last {
 	padding-right: 0;
-	}
-.sticky {
-	position: relative;
-	}
-.bypostauthor {
 	}
 	
 /************************************************
@@ -2588,3 +2586,41 @@ a, a:link {
 .row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
 .row:after, .clearfix:after { clear: both; }
 .row, .clearfix { zoom: 1; }
+
+/************************************************
+*	28.	WordPress Core	 			     	    *
+************************************************/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	}
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+	}
+.wp-audio-shortcode {
+	margin: 12px 0px;
+	}
+.sticky, .bypostauthor {
+	position: relative;
+	}

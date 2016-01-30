@@ -50,9 +50,10 @@
 		padding: 72px 0px;
 		position: relative;
 		top: auto;
-		-webkit-transform: translateY(0);
-		-ms-transform: translateY(0);
-		transform: translateY(0);
+		left: auto;
+		-webkit-transform: translateY(0) translateX(0);
+		-ms-transform: translateY(0) translateX(0);
+		transform: translateY(0) translateX(0);
 		}
 	.featured-page .headline {
 		font-size: 3.4rem;

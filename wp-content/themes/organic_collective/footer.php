@@ -48,8 +48,8 @@
 		<div class="footer-content">
 	
 			<div class="align-left">
-				<p><?php _e("Copyright", 'organicthemes'); ?> &copy; <?php echo date(__("Y", 'organicthemes')); ?> &middot; <?php _e("All Rights Reserved", 'organicthemes'); ?> &middot; <?php bloginfo('name'); ?></p>
-				<p><a href="http://www.organicthemes.com/themes/" target="_blank"><?php _e("Collective Theme", 'organicthemes'); ?></a> <?php _e("by", 'organicthemes'); ?> <a href="http://www.organicthemes.com" target="_blank"><?php _e("Organic Themes", 'organicthemes'); ?></a> &middot; <a href="http://kahunahost.com" target="_blank" title="WordPress Hosting"><?php _e("WordPress Hosting", 'organicthemes'); ?></a> &middot; <a href="<?php bloginfo('rss2_url'); ?>"><?php _e("RSS Feed", 'organicthemes'); ?></a> &middot; <?php wp_loginout(); ?></p>
+				<p><?php esc_html_e("Copyright", 'collective'); ?> &copy; <?php echo date(__("Y", 'collective')); ?> &middot; <?php esc_html_e("All Rights Reserved", 'collective'); ?> &middot; <?php bloginfo('name'); ?></p>
+				<p><a href="http://www.organicthemes.com/themes/" target="_blank"><?php esc_html_e("Collective Theme", 'collective'); ?></a> <?php esc_html_e("by", 'collective'); ?> <a href="http://www.organicthemes.com" target="_blank"><?php esc_html_e("Organic Themes", 'collective'); ?></a> &middot; <a href="http://kahunahost.com" target="_blank" title="WordPress Hosting"><?php esc_html_e("WordPress Hosting", 'collective'); ?></a> &middot; <a href="<?php bloginfo('rss2_url'); ?>"><?php esc_html_e("RSS Feed", 'collective'); ?></a> &middot; <?php wp_loginout(); ?></p>
 			</div>
 			
 			<div class="align-right">

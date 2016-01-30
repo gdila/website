@@ -98,7 +98,7 @@ function organic_accordion_section($atts, $content = null) {
     $x = $GLOBALS["section_count"];
     $GLOBALS["sections"][$x] = array(
         "name"   => sprintf( $name, $GLOBALS["section_count"] ),
-        "content" => $content
+        "content" => do_shortcode($content)
     );
     $GLOBALS["section_count"] += 1;
 }
@@ -118,10 +118,10 @@ function organic_tab_group( $atts, $content ){
 		$int = '1';
 		foreach( $GLOBALS['tabs'] as $tab ){
 			
-			$tabs[] = '<li><a href="#tabs-'.$int.'">'.$tab['title'].'</a></li>';
+			$tabs[] = '<li><a href="#panel-'.$int.'">'.$tab['title'].'</a></li>';
 			
 			$panes[] = '
-			<div id="tabs-'.$int.'">
+			<div class="ui-tabs-hide" id="panel-'.$int.'">
 				<h3>'.$tab['title'].'</h3>
 				'.$tab['content'].'
 			</div>';
@@ -131,7 +131,7 @@ function organic_tab_group( $atts, $content ){
 		
 		$return = "\n".'
 		<div class="organic-tabs">
-			<ul>'.implode( "\n", $tabs ).'</ul>
+			<ul id="tabs">'.implode( "\n", $tabs ).'</ul>
 			'."\n".' '.implode( "\n", $panes ).'
 		</div>'."\n";		
 	}
@@ -147,7 +147,7 @@ function organic_tab( $atts, $content ){
 	), $atts));
 	
 	$x = $GLOBALS['tab_count'];
-	$GLOBALS['tabs'][$x] = array( 'title' => sprintf( $title, $GLOBALS['tab_count'] ), 'content' => $content );
+	$GLOBALS['tabs'][$x] = array( 'title' => sprintf( $title, $GLOBALS['tab_count'] ), 'content' => do_shortcode($content) );
 	
 	$GLOBALS['tab_count']++;
 }
@@ -178,9 +178,9 @@ add_shortcode('icon', 'organic_icons');
 function organic_headline( $atts, $content = null ) {
 
     extract(shortcode_atts(array(
-	    'align'	=> '',
-	    'color'	=> '',
-	    'size'	=> '',
+	    'align'	=> 'left',
+	    'color'	=> '000000',
+	    'size'	=> 'large',
     ), $atts));
 	
 	$out = '<h2 class="organic-headline '.$size.'-headline" style="text-align: '.$align.'; color: #'.$color.';">' .do_shortcode($content). '</h2>';
@@ -288,7 +288,7 @@ function organic_three_fourth_last( $atts, $content = null ) {
 add_shortcode('three_fourth_last', 'organic_three_fourth_last');
 
 function organic_one_fifth( $atts, $content = null ) {
-   return '<div class="one-fifth">' . do_shortcode($content) . '</div>';
+   return '<div class="organic-column one-fifth">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('one_fifth', 'organic_one_fifth');
 

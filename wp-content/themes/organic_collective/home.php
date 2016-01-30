@@ -11,16 +11,18 @@ get_header(); ?>
 <!-- BEGIN .post class -->
 <div <?php post_class(); ?> id="page-<?php the_ID(); ?>">
 
-	<?php if ( 'false' != get_theme_mod( 'page_feature' ) ) { ?>
-	<?php if ( '' != get_theme_mod( 'page_feature' ) ) { ?>
+	<?php if ( '0' != get_theme_mod( 'page_feature', '0' ) ) { ?>
 	
 		<?php get_template_part( 'content/home', 'page' ); ?>
 	
-	<?php } ?>
+	<?php } else { ?>
+		
+		<?php get_template_part( 'content/home', 'setup' ); ?>
+		
 	<?php } ?>
 	
-	<?php if ( '-1' != get_theme_mod( 'category_team_home' ) ) { ?>
-	<?php if ( '0' != get_theme_mod( 'category_team_home' ) ) { ?>
+	<?php if ( '0' != get_theme_mod( 'category_team_home', '0' ) ) { ?>
+	<?php if ( '' != get_theme_mod( 'category_team_home', '0' ) ) { ?>
 	
 	<?php $team = new WP_Query(array('post_type' => 'team')); ?>
 	<?php if ( $team->have_posts() ) { ?>
@@ -34,8 +36,8 @@ get_header(); ?>
 			<!-- BEGIN .featured-team -->
 			<div class="featured-team">
 			
-				<?php if (get_theme_mod('team_title') && get_theme_mod('team_title') != '') { ?>
-					<h4 class="headline text-center"><?php echo get_theme_mod('team_title'); ?></h4>
+				<?php if ( '' != get_theme_mod('team_title', 'My Team') ) { ?>
+					<h4 class="headline text-center"><?php echo get_theme_mod('team_title', 'My Team'); ?></h4>
 				<?php } ?>
 						
 				<?php get_template_part( 'loop', 'team' ); ?>
@@ -54,16 +56,14 @@ get_header(); ?>
 	<?php } ?>
 	<?php } ?>
 	
-	<?php if ( '-1' != get_theme_mod( 'category_news' ) ) { ?>
-	<?php if ( '0' != get_theme_mod( 'category_news' ) ) { ?>
+	<?php if ( '0' != get_theme_mod( 'category_news', '0' ) ) { ?>
+	<?php if ( '' != get_theme_mod( 'category_news', '0' ) ) { ?>
 		
 	<!-- BEGIN .row -->
 	<div class="row news-section" <?php if ( '' != get_theme_mod( 'news_background' ) ) { ?> style="background-image: url(<?php echo get_theme_mod('news_background') ?>); background-repeat: repeat;" <?php } ?>>
 		
 		<!-- BEGIN .content -->
 		<div class="content">
-		
-			<!--<div class="ten columns">-->
 		
 			<!-- BEGIN .featured-news -->
 			<div class="featured-news">
@@ -72,8 +72,6 @@ get_header(); ?>
 		
 			<!-- END .featured-news -->
 			</div>
-			
-			<!--</div>-->
 			
 		<!-- END .content -->
 		</div>
@@ -84,8 +82,8 @@ get_header(); ?>
 	<?php } ?>
 	<?php } ?>
 	
-	<?php if ( 'false' != get_theme_mod( 'page_footer' ) ) { ?>
-	<?php if ( '' != get_theme_mod( 'page_footer' ) ) { ?>
+	<?php if ( '0' != get_theme_mod( 'page_footer', '0' ) ) { ?>
+	<?php if ( '' != get_theme_mod( 'page_footer', '0' ) ) { ?>
 	
 		<?php get_template_part( 'content/home', 'footer' ); ?>
 	

@@ -67,7 +67,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea -->
 				<div class="postarea right">
 
-					<?php get_template_part( 'loop', 'blog' ); ?>
+					<?php get_template_part( 'loop', 'archive' ); ?>
 
 				<!-- END .postarea -->
 				</div>

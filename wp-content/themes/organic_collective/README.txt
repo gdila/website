@@ -1,4 +1,4 @@
-Organic Collective Theme v2.0.5
+Organic Collective Theme v2.1.1
 http://www.organicthemes.com
  
 INSTALL: 
@@ -100,3 +100,24 @@ CHANGELOG v2.0.4:
 
 CHANGELOG v2.0.5:
 - Added Jetpack file with SEO fix for featured videos
+
+CHANGELOG v2.0.6:
+- Removed responsive grid option
+- Updated flexslider script
+- Updated shortcodes
+
+CHANGELOG v2.1:
+- Updated shortcodes
+- Updated screenshot
+- Updated text domain to match theme name
+- Updated has_post_thumbnail()
+- Added escaping to translations
+- Added default theme options
+- Moved options to Theme Options panel
+- Moved logo option to Site Identity
+- Fixed issue with small excerpt width on featured page
+- Regenerated translation files
+- General cleanup
+
+CHANGELOG v2.1.1:
+- Fix for mobile style on home page

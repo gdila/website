@@ -9,12 +9,12 @@
 get_header(); ?>
 
 <?php if (isset($_POST['featurevid'])){ $custom = get_post_custom($post->ID); $featurevid = $custom['featurevid'][0]; } ?>
-<?php $thumb = ( '' != get_the_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
+<?php $thumb = ( has_post_thumbnail() ) ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'collective-featured-large' ) : false; ?>
 
 <!-- BEGIN .post class -->
 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	
-	<?php if (get_theme_mod('display_feature_post') == '1') { ?>
+	<?php if (get_theme_mod('display_feature_post', '1') == '1') { ?>
 		<?php if ( get_post_meta($post->ID, 'featurevid', true) ) { ?>
 			<div class="feature-vid"><?php echo get_post_meta($post->ID, 'featurevid', true); ?></div>
 		<?php } else { ?>

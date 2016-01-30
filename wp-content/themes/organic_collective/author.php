@@ -25,7 +25,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea -->
 				<div class="postarea">
 				
-					<?php get_template_part( 'content/author', 'page' ); ?>
+					<?php get_template_part( 'content/content', 'author' ); ?>
 				
 				<!-- END .postarea -->
 				</div>
@@ -49,7 +49,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea full -->
 				<div class="postarea full">
 				
-					<?php get_template_part( 'content/author', 'page' ); ?>
+					<?php get_template_part( 'content/content', 'author' ); ?>
 				
 				<!-- END .postarea full -->
 				</div>
