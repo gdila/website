@@ -33,11 +33,11 @@ function collective_theme_customizer( $wp_customize ) {
 			);
 		}
 	}
-	
+
 	// Custom Taxonomy Dropdown Control
 	class Collective_Taxonomy_Dropdown_Control extends WP_Customize_Control {
 	public $type = 'dropdown-taxonomy';
-	
+
 	public function render_content() {
 		$dropdown = wp_dropdown_categories(
 				array(
@@ -59,12 +59,12 @@ function collective_theme_customizer( $wp_customize ) {
 			);
 		}
 	}
-	
+
 	// Numerical Control
 	class Collective_Customizer_Number_Control extends WP_Customize_Control {
-	
+
 		public $type = 'number';
-		
+
 		public function render_content() {
 			?>
 			<label>
@@ -73,39 +73,39 @@ function collective_theme_customizer( $wp_customize ) {
 			</label>
 			<?php
 		}
-	
+
 	}
-	
+
 	function collective_sanitize_categories( $input ) {
 		$categories = get_terms( 'category', array('fields' => 'ids', 'get' => 'all') );
-		
+
 	   if ( in_array( $input, $categories ) ) {
 	       return $input;
 	   } else {
 	   	return '';
 	   }
 	}
-	
+
 	function collective_sanitize_team( $input ) {
 		$categories = get_terms( 'category-team', array('fields' => 'ids', 'get' => 'all') );
-		
+
 	   if ( in_array( $input, $categories ) ) {
 	       return $input;
 	   } else {
 	   	return '';
 	   }
 	}
-	
+
 	function collective_sanitize_pages( $input ) {
 		$pages = get_all_page_ids();
-	 
+
 	    if ( in_array( $input, $pages ) ) {
 	        return $input;
 	    } else {
 	    	return '';
 	    }
 	}
-	
+
 	function collective_sanitize_transition_interval( $input ) {
 	    $valid = array(
 	        '2000' 		=> esc_html__( '2 Seconds', 'collective' ),
@@ -119,41 +119,41 @@ function collective_theme_customizer( $wp_customize ) {
 	        '60000' 	=> esc_html__( '1 Minute', 'collective' ),
 	        '999999999'	=> esc_html__( 'Hold Frame', 'collective' ),
 	    );
-	 
+
 	    if ( array_key_exists( $input, $valid ) ) {
 	        return $input;
 	    } else {
 	        return '';
 	    }
 	}
-	
+
 	function collective_sanitize_transition_style( $input ) {
 	    $valid = array(
 	        'fade' 		=> esc_html__( 'Fade', 'collective' ),
 	        'slide' 	=> esc_html__( 'Slide', 'collective' ),
 	    );
-	 
+
 	    if ( array_key_exists( $input, $valid ) ) {
 	        return $input;
 	    } else {
 	        return '';
 	    }
 	}
-	
+
 	function collective_sanitize_columns( $input ) {
 	    $valid = array(
 	        'one' 		=> esc_html__( 'One Column', 'collective' ),
 	        'two' 		=> esc_html__( 'Two Columns', 'collective' ),
 	        'three' 	=> esc_html__( 'Three Columns', 'collective' ),
 	    );
-	 
+
 	    if ( array_key_exists( $input, $valid ) ) {
 	        return $input;
 	    } else {
 	        return '';
 	    }
 	}
-	
+
 	function collective_sanitize_checkbox( $input ) {
 		if ( $input == 1 ) {
 			return 1;
@@ -161,7 +161,7 @@ function collective_theme_customizer( $wp_customize ) {
 			return '';
 		}
 	}
-	
+
 	function collective_sanitize_text( $input ) {
 	    return wp_kses_post( force_balance_tags( $input ) );
 	}
@@ -172,11 +172,11 @@ function collective_theme_customizer( $wp_customize ) {
 
 	// Set site title color to be previewed in real-time
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
+
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Logo Section
 	//-------------------------------------------------------------------------------------------------------------------//
-	
+
 	$wp_customize->add_section( 'title_tagline' , array(
 		'title' 	=> esc_html__( 'Site Identity', 'collective' ),
 		'description' => esc_html__( 'Logo images have a max-height of 140px.', 'collective' ),
@@ -194,11 +194,11 @@ function collective_theme_customizer( $wp_customize ) {
 			'settings'	=> 'collective_logo',
 			'priority'	=> 20,
 		) ) );
-	
+
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Colors Section
 	//-------------------------------------------------------------------------------------------------------------------//
-		
+
 		// Link Color
 		$wp_customize->add_setting( 'link_color', array(
 	        'default' => '#009999',
@@ -210,7 +210,7 @@ function collective_theme_customizer( $wp_customize ) {
 	        'settings' => 'link_color',
 	        'priority'    => 50,
 	    ) ) );
-	    
+
 	    // Link Hover Color
 	    $wp_customize->add_setting( 'link_hover_color', array(
 	        'default' => '#006666',
@@ -222,7 +222,7 @@ function collective_theme_customizer( $wp_customize ) {
 	        'settings' => 'link_hover_color',
 	        'priority'    => 60,
 	    ) ) );
-	    
+
 	    // Heading Link Color
 	    $wp_customize->add_setting( 'heading_link_color', array(
 	        'default' => '#333333',
@@ -234,7 +234,7 @@ function collective_theme_customizer( $wp_customize ) {
 	        'settings' => 'heading_link_color',
 	        'priority'    => 70,
 	    ) ) );
-	    
+
 	    // Heading Link Hover Color
 	    $wp_customize->add_setting( 'heading_link_hover_color', array(
 	        'default' => '#009999',
@@ -246,7 +246,7 @@ function collective_theme_customizer( $wp_customize ) {
 	        'settings' => 'heading_link_hover_color',
 	        'priority'    => 80,
 	    ) ) );
-	    
+
 	    // Highlight Color
 	    $wp_customize->add_setting( 'highlight_color', array(
 	        'default' => '#33cccc',
@@ -258,7 +258,7 @@ function collective_theme_customizer( $wp_customize ) {
 	        'settings' => 'highlight_color',
 	        'priority'    => 90,
 	    ) ) );
-	    
+
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Theme Options Panel
 	//-------------------------------------------------------------------------------------------------------------------//
@@ -270,17 +270,17 @@ function collective_theme_customizer( $wp_customize ) {
 	    'title' 			=> esc_html__( 'Theme Options', 'collective' ),
 	    'description' 		=> esc_html__( 'This panel allows you to customize specific areas of the Collective Theme.', 'collective' ),
 	) );
-		
+
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Home Page Section
 	//-------------------------------------------------------------------------------------------------------------------//
-	
+
 	$wp_customize->add_section( 'collective_home_section' , array(
 		'title'     => esc_html__( 'Home Page', 'collective' ),
 		'priority'  => 101,
 		'panel' 	=> 'collective_theme_options',
 	) );
-	
+
 		// Featured Page Top
 		$wp_customize->add_setting( 'page_feature', array(
 			'default' => '0',
@@ -293,10 +293,10 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'dropdown-pages',
 			'priority' => 20,
 		) ) );
-		
+
 		// Featured Team Title
 		$wp_customize->add_setting( 'team_title', array(
-			 'default'	=> 'My Team', 
+			 'default'	=> 'My Team',
 			 'sanitize_callback' => 'collective_sanitize_text',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'team_title', array(
@@ -306,7 +306,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'text',
 			'priority' => 40,
 		) ) );
-		
+
 		// Featured Team Category
 		$wp_customize->add_setting( 'category_team_home' , array(
 			'default' => '0',
@@ -322,7 +322,7 @@ function collective_theme_customizer( $wp_customize ) {
 				'taxonomy' => 'category-team',
 			),
 		) ) );
-		
+
 		// Featured Team Background
 		$wp_customize->add_setting( 'team_background', array(
 			'default' 	=> '',
@@ -334,7 +334,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'settings'	=> 'team_background',
 			'priority'	=> 80,
 		) ) );
-	
+
 		// Featured News Category
 		$wp_customize->add_setting( 'category_news', array(
 			'default' => '0',
@@ -347,7 +347,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'dropdown-categories',
 			'priority' => 100,
 		) ) );
-		
+
 		// Featured News Posts Displayed
 		$wp_customize->add_setting( 'postnumber_news', array(
 			'default' => '3',
@@ -360,7 +360,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'number',
 			'priority' => 120,
 		) ) );
-		
+
 		// Featured News Background
 		$wp_customize->add_setting( 'news_background', array(
 			'default' 	=> '',
@@ -372,7 +372,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'settings'	=> 'news_background',
 			'priority'	=> 140,
 		) ) );
-		
+
 		// Featured Page Bottom
 		$wp_customize->add_setting( 'page_footer', array(
 			'default' => '0',
@@ -385,7 +385,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'dropdown-pages',
 			'priority' => 160,
 		) ) );
-		
+
 		// Featured Page Bottom Background Color
 		$wp_customize->add_setting( 'page_footer_bg', array(
 		    'default' => '#33cccc',
@@ -397,17 +397,17 @@ function collective_theme_customizer( $wp_customize ) {
 		    'settings' => 'page_footer_bg',
 		    'priority'    => 180,
 		) ) );
-		
+
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Page Templates
 	//-------------------------------------------------------------------------------------------------------------------//
-	
+
 	$wp_customize->add_section( 'collective_templates_section' , array(
 		'title'     => esc_html__( 'Page Templates', 'collective' ),
 		'priority'  => 102,
 		'panel' 	=> 'collective_theme_options',
 	) );
-		
+
 		// Blog Template Category
 		$wp_customize->add_setting( 'category_blog' , array(
 			'default' => '0',
@@ -420,7 +420,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'dropdown-categories',
 			'priority' => 40,
 		) ) );
-		
+
 		// Blog Posts Displayed
 		$wp_customize->add_setting( 'postnumber_blog', array(
 			'default' => '10',
@@ -433,7 +433,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'number',
 			'priority' => 60,
 		) ) );
-		
+
 		// Portfolio Column Layout
 		$wp_customize->add_setting( 'portfolio_columns', array(
 		    'default' => 'three',
@@ -450,7 +450,7 @@ function collective_theme_customizer( $wp_customize ) {
 		    ),
 		    'priority' => 80,
 		) ) );
-		
+
 		// Portfolio Template Category
 		$wp_customize->add_setting( 'category_portfolio' , array(
 			'default' => '0',
@@ -463,7 +463,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'dropdown-categories',
 			'priority' => 100,
 		) ) );
-		
+
 		// Display Portfolio Info
 		$wp_customize->add_setting( 'display_portfolio_info', array(
 			'default'	=> '1',
@@ -476,7 +476,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'checkbox',
 			'priority' => 120,
 		) ) );
-		
+
 		// Slider Transition Interval
 		$wp_customize->add_setting( 'transition_interval', array(
 		    'default' => '8000',
@@ -500,7 +500,7 @@ function collective_theme_customizer( $wp_customize ) {
 		    ),
 		    'priority' => 140,
 		) ) );
-		
+
 		// Slider Transition Style
 		$wp_customize->add_setting( 'transition_style', array(
 		    'default' => 'fade',
@@ -516,7 +516,7 @@ function collective_theme_customizer( $wp_customize ) {
 		    ),
 		    'priority' => 160,
 		) ) );
-		
+
 		// Featured Slideshow Category
 		$wp_customize->add_setting( 'category_slideshow_home' , array(
 			'default' => '0',
@@ -529,7 +529,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'dropdown-categories',
 			'priority' => 180,
 		) ) );
-		
+
 		// Featured Slideshow Posts Displayed
 		$wp_customize->add_setting( 'postnumber_slideshow_home', array(
 			'default' => '10',
@@ -542,17 +542,17 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'number',
 			'priority' => 200,
 		) ) );
-		
+
 	//-------------------------------------------------------------------------------------------------------------------//
 	// Misc Settings
 	//-------------------------------------------------------------------------------------------------------------------//
-	
+
 	$wp_customize->add_section( 'collective_layout_section' , array(
 		'title'     => esc_html__( 'Misc Settings', 'collective' ),
 		'priority'  => 103,
 		'panel' 	=> 'collective_theme_options',
 	) );
-	
+
 		// Display Site Title
 		$wp_customize->add_setting( 'display_site_title', array(
 			'default'	=> '1',
@@ -565,7 +565,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'checkbox',
 			'priority' => 20,
 		) ) );
-		
+
 		// Display Large Team Featured Image
 		$wp_customize->add_setting( 'display_feature_team', array(
 			'default'	=> '',
@@ -578,7 +578,7 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'checkbox',
 			'priority' => 40,
 		) ) );
-		
+
 		// Display Post Featured Image or Video
 		$wp_customize->add_setting( 'display_feature_post', array(
 			'default'	=> '1',
@@ -591,32 +591,15 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'checkbox',
 			'priority' => 60,
 		) ) );
-		
-<<<<<<< HEAD
-=======
-		// Enable CSS3 Full Width Background
-		$wp_customize->add_setting( 'background_stretch', array(
-			'default'	=> true,
-			'sanitize_callback' => 'collective_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'background_stretch', array(
-			'label'		=> __( 'Enable Full Width Background Image?', 'organicthemes' ),
-			'section'	=> 'collective_layout_section',
-			'settings'	=> 'background_stretch',
-			'type'		=> 'checkbox',
-			'priority' => 80,
-		) ) );
-		
-	//-------------------------------------------------------------------------------------------------------------------//
+
 	// Social Section
 	//-------------------------------------------------------------------------------------------------------------------//
-	
+
 	$wp_customize->add_section( 'collective_social_section' , array(
 		'title'       => __( 'Social Links', 'organicthemes' ),
 		'priority'    => 105,
 	) );
-		
->>>>>>> origin/master
+
 		// Display Social Share Buttons on Single Posts
 		$wp_customize->add_setting( 'display_social_post', array(
 			'default'	=> '1',
@@ -629,10 +612,10 @@ function collective_theme_customizer( $wp_customize ) {
 			'type'		=> 'checkbox',
 			'priority' => 80,
 		) ) );
-		
+
 		// Twitter User
 		$wp_customize->add_setting( 'collective_user_twitter', array(
-			 'default'	=> 'OrganicThemes', 
+			 'default'	=> 'OrganicThemes',
 			 'sanitize_callback' => 'collective_sanitize_text',
 		) );
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'collective_user_twitter', array(
@@ -641,8 +624,8 @@ function collective_theme_customizer( $wp_customize ) {
 			'settings'	=> 'collective_user_twitter',
 			'type'		=> 'text',
 			'priority' => 100,
-		) ) );		
-	
+		) ) );
+
 }
 add_action('customize_register', 'collective_theme_customizer');
 

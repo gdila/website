@@ -109,6 +109,8 @@
 		'phone': '<?php echo get_user_meta($current_user->ID, "phone", true); ?>'
 	};
 </script>
+<?php else : ?>
+	<script>var currentUser = null;</script>
 <?php endif; ?>
 
 
